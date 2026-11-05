@@ -19,7 +19,7 @@ Report household water problems and track each one from **Pending → In Progres
 | **Professor** | Mr. John Kenneth Timblaco |
 | **Section** | BSIT 3-2 |
 | **Group** | Group 1 |
-| **Members** | Denver Reyes, Jan Emmanuel Dela Cruz, Jhayciel Santiago, Joshua Abalo, Rhaine Cyrel Valera |
+| **Members** | Denver Reyes, Jan Emmanuel Dela Cruz, Jhayciel Santiago, Joshua Aba, Rhaine Cyrel Valera |
 
 ---
 
