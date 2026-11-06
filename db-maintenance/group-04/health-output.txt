@@ -1,0 +1,84 @@
+account  |    database     |                                 version                                 
+-----------+-----------------+-------------------------------------------------------------------------
+ grp04_dba | grp03_projectdb | PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+(1 row)
+
+ database_size 
+---------------
+ 8902 kB
+(1 row)
+
+ object_type | count 
+-------------+-------
+ index       |    22
+ sequence    |    11
+ table       |    11
+ view        |     2
+(4 rows)
+
+     datname     | numbackends | xact_commit | xact_rollback | deadlocks 
+-----------------+-------------+-------------+---------------+-----------
+ grp03_projectdb |           1 |         213 |            28 |         0
+(1 row)
+
+  pid  |  usename  | state  | wait_event_type | wait_event |         query_start          |                            query                             
+-------+-----------+--------+-----------------+------------+------------------------------+--------------------------------------------------------------
+ 51836 | grp04_dba | active |                 |            | 2026-11-06 20:05:00.74298+08 | SELECT pid, usename, state, wait_event_type, wait_event, que
+(1 row)
+
+ pid | usename | duration | query 
+-----+---------+----------+-------
+(0 rows)
+
+      rolname       | rolcanlogin | rolsuper | rolcreatedb | rolcreaterole |     member_of      
+--------------------+-------------+----------+-------------+---------------+--------------------
+ grp04_app          | t           | f        | f           | f             | grp04_runtime_grp
+ grp04_backup       | t           | f        | f           | f             | grp04_backup_grp
+ grp04_backup_grp   | f           | f        | f           | f             | 
+ grp04_dba          | t           | f        | f           | f             | grp04_dba_grp
+ grp04_dba_grp      | f           | f        | f           | f             | pg_monitor
+ grp04_readonly_grp | f           | f        | f           | f             | 
+ grp04_report       | t           | f        | f           | f             | grp04_readonly_grp
+ grp04_runtime_grp  | f           | f        | f           | f             | 
+(8 rows)
+
+         relname         | n_live_tup | n_dead_tup | n_mod_since_analyze |          last_vacuum          | last_autovacuum |         last_analyze          | last_autoanalyze 
+-------------------------+------------+------------+---------------------+-------------------------------+-----------------+-------------------------------+------------------
+ staff_users             |          5 |          5 |                  10 |                               |                 |                               | 
+ patients                |          2 |          3 |                   4 |                               |                 |                               | 
+ specialties             |          4 |          1 |                   5 |                               |                 |                               | 
+ appointments            |          2 |          0 |                   0 | 2026-11-06 20:04:58.137678+08 |                 | 2026-11-06 20:04:58.040801+08 | 
+ billing                 |          0 |          0 |                   0 |                               |                 |                               | 
+ deleted_records         |          0 |          0 |                   0 |                               |                 |                               | 
+ doctors                 |          3 |          0 |                   3 |                               |                 |                               | 
+ medical_notes           |          2 |          0 |                   2 |                               |                 |                               | 
+ patient_password_resets |          0 |          0 |                   0 |                               |                 |                               | 
+ prescriptions           |          2 |          0 |                   2 |                               |                 |                               | 
+ staff_password_resets   |          0 |          0 |                   0 |                               |                 |                               | 
+(11 rows)
+
+       table_name        |           index_name           | idx_scan |    size    
+-------------------------+--------------------------------+----------+------------
+ appointments            | appointments_doctor_slot       |        0 | 16 kB
+ appointments            | appointments_pkey              |        4 | 16 kB
+ billing                 | billing_appointment_id_key     |        0 | 8192 bytes
+ billing                 | billing_pkey                   |        0 | 8192 bytes
+ deleted_records         | deleted_records_pkey           |        0 | 8192 bytes
+ doctors                 | doctors_email_key              |        2 | 16 kB
+ doctors                 | doctors_pkey                   |        5 | 16 kB
+ medical_notes           | medical_notes_pkey             |        0 | 16 kB
+ medical_notes           | one_note_per_visit             |        0 | 16 kB
+ patient_password_resets | patient_password_resets_idx    |        0 | 8192 bytes
+ patient_password_resets | patient_password_resets_pkey   |        0 | 8192 bytes
+ patients                | patients_email_unique          |        1 | 16 kB
+ patients                | patients_pkey                  |        2 | 16 kB
+ prescriptions           | prescriptions_pkey             |        0 | 16 kB
+ specialties             | specialties_pkey               |        3 | 16 kB
+ specialties             | specialties_specialty_name_key |        2 | 16 kB
+ staff_password_resets   | staff_password_resets_pkey     |        0 | 8192 bytes
+ staff_password_resets   | staff_password_resets_user_idx |        0 | 8192 bytes
+ staff_users             | staff_users_doctor_unique      |        0 | 16 kB
+ staff_users             | staff_users_email_unique       |        0 | 16 kB
+ staff_users             | staff_users_phone_unique       |        0 | 16 kB
+ staff_users             | staff_users_pkey               |        0 | 16 kB
+(22 rows)

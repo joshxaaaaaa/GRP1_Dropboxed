@@ -1,0 +1,48 @@
+-- A patient's appointment history with doctor and specialty
+-- Account: grp04_report
+SELECT a.appointment_id, a.appointment_date, a.status, d.last_name AS doctor, s.specialty_name FROM appointments a JOIN doctors d ON d.doctor_id = a.doctor_id LEFT JOIN specialties s ON s.specialty_id = d.specialty_id WHERE a.patient_id = 1 ORDER BY a.appointment_date DESC;
+
+-- EXPLAIN
+SET
+                                   QUERY PLAN                                    
+---------------------------------------------------------------------------------
+ Sort  (cost=3.19..3.20 rows=1 width=40)
+   Sort Key: a.appointment_date DESC
+   ->  Nested Loop Left Join  (cost=0.00..3.18 rows=1 width=40)
+         Join Filter: (s.specialty_id = d.specialty_id)
+         ->  Nested Loop  (cost=0.00..2.09 rows=1 width=32)
+               Join Filter: (d.doctor_id = a.doctor_id)
+               ->  Seq Scan on appointments a  (cost=0.00..1.02 rows=1 width=26)
+                     Filter: (patient_id = 1)
+               ->  Seq Scan on doctors d  (cost=0.00..1.03 rows=3 width=14)
+         ->  Seq Scan on specialties s  (cost=0.00..1.04 rows=4 width=16)
+(10 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                          QUERY PLAN                                                          
+------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=3.19..3.20 rows=1 width=40) (actual time=0.030..0.031 rows=1.00 loops=1)
+   Sort Key: a.appointment_date DESC
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=6
+   ->  Nested Loop Left Join  (cost=0.00..3.18 rows=1 width=40) (actual time=0.017..0.018 rows=1.00 loops=1)
+         Join Filter: (s.specialty_id = d.specialty_id)
+         Rows Removed by Join Filter: 3
+         Buffers: shared hit=3
+         ->  Nested Loop  (cost=0.00..2.09 rows=1 width=32) (actual time=0.013..0.014 rows=1.00 loops=1)
+               Join Filter: (d.doctor_id = a.doctor_id)
+               Buffers: shared hit=2
+               ->  Seq Scan on appointments a  (cost=0.00..1.02 rows=1 width=26) (actual time=0.009..0.009 rows=1.00 loops=1)
+                     Filter: (patient_id = 1)
+                     Rows Removed by Filter: 1
+                     Buffers: shared hit=1
+               ->  Seq Scan on doctors d  (cost=0.00..1.03 rows=3 width=14) (actual time=0.003..0.003 rows=1.00 loops=1)
+                     Buffers: shared hit=1
+         ->  Seq Scan on specialties s  (cost=0.00..1.04 rows=4 width=16) (actual time=0.003..0.004 rows=4.00 loops=1)
+               Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=311
+ Planning Time: 3.350 ms
+ Execution Time: 0.056 ms
+(23 rows)

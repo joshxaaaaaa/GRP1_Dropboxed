@@ -1,0 +1,5 @@
+-- Group 09: routine maintenance. Run as grp09_dba. VACUUM runs outside a transaction; VACUUM FULL is not used.
+SET search_path TO "public";
+ANALYZE VERBOSE "attendance", "class_enrollments", "classes", "members", "membership_plans", "memberships", "payments", "trainers";
+VACUUM (VERBOSE, ANALYZE) "memberships";
+SELECT relname, n_live_tup, n_dead_tup, last_vacuum, last_analyze FROM pg_stat_user_tables WHERE schemaname = 'public' AND relname = 'memberships';

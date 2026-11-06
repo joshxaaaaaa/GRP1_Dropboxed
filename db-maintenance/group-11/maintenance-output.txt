@@ -1,0 +1,84 @@
+SET
+ANALYZE
+VACUUM
+   relname   | n_live_tup | n_dead_tup |          last_vacuum          |         last_analyze          
+-------------+------------+------------+-------------------------------+-------------------------------
+ reservation |          3 |          0 | 2026-11-06 10:59:08.393035+08 | 2026-11-06 10:59:08.393314+08
+(1 row)
+
+INFO:  analyzing "public.app_user"
+INFO:  "app_user": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.app_user"
+avg read rate: 0.000 MB/s, avg write rate: 11.719 MB/s
+buffer usage: 286 hits, 0 reads, 3 dirtied
+WAL usage: 8 records, 3 full page images, 19799 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.department"
+INFO:  "department": scanned 1 of 1 pages, containing 5 live rows and 3 dead rows; 5 rows in sample, 5 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.department"
+avg read rate: 0.000 MB/s, avg write rate: 15.625 MB/s
+buffer usage: 53 hits, 0 reads, 2 dirtied
+WAL usage: 3 records, 2 full page images, 7666 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.material"
+INFO:  "material": scanned 1 of 1 pages, containing 6 live rows and 2 dead rows; 6 rows in sample, 6 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.material"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 130 hits, 0 reads, 0 dirtied
+WAL usage: 6 records, 0 full page images, 448 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.penalty"
+INFO:  "penalty": scanned 1 of 1 pages, containing 1 live rows and 0 dead rows; 1 rows in sample, 1 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.penalty"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 197 hits, 0 reads, 0 dirtied
+WAL usage: 8 records, 0 full page images, 618 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.reservation"
+INFO:  "reservation": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.reservation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 291 hits, 0 reads, 0 dirtied
+WAL usage: 10 records, 0 full page images, 760 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.reservation_material"
+INFO:  "reservation_material": scanned 1 of 1 pages, containing 5 live rows and 0 dead rows; 5 rows in sample, 5 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.reservation_material"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 48 hits, 0 reads, 0 dirtied
+WAL usage: 4 records, 0 full page images, 326 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.room"
+INFO:  "room": scanned 1 of 1 pages, containing 7 live rows and 0 dead rows; 7 rows in sample, 7 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.room"
+avg read rate: 0.000 MB/s, avg write rate: 15.625 MB/s
+buffer usage: 96 hits, 0 reads, 4 dirtied
+WAL usage: 12 records, 4 full page images, 25098 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.01 s, elapsed: 0.00 s
+INFO:  analyzing "public.staff"
+INFO:  "staff": scanned 1 of 1 pages, containing 2 live rows and 0 dead rows; 2 rows in sample, 2 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.staff"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 81 hits, 0 reads, 0 dirtied
+WAL usage: 7 records, 0 full page images, 518 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "ReserveIT.public.reservation"
+INFO:  finished vacuuming "ReserveIT.public.reservation": index scans: 0
+pages: 0 removed, 1 remain, 1 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 3 remain, 0 are dead but not yet removable
+removable cutoff: 9527, which was 0 XIDs old when operation ended
+frozen: 0 pages from table (0.00% of total) had 0 tuples frozen
+visibility map: 0 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+index "no_overlapping_approved_reservations": pages: 1 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 20 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.reservation"
+INFO:  "reservation": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "ReserveIT.public.reservation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 67 hits, 0 reads, 0 dirtied
+WAL usage: 11 records, 0 full page images, 884 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s

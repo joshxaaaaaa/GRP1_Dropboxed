@@ -1,0 +1,167 @@
+SET
+ANALYZE
+VACUUM
+  relname  | n_live_tup | n_dead_tup |          last_vacuum          |         last_analyze          
+-----------+------------+------------+-------------------------------+-------------------------------
+ menu_item |          8 |          0 | 2026-11-06 20:05:14.429462+08 | 2026-11-06 20:05:14.431947+08
+(1 row)
+
+INFO:  analyzing "shioricafe_schema.category"
+INFO:  "category": scanned 1 of 1 pages, containing 2 live rows and 0 dead rows; 2 rows in sample, 2 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.category"
+avg read rate: 0.000 MB/s, avg write rate: 15.625 MB/s
+buffer usage: 397 hits, 0 reads, 6 dirtied
+WAL usage: 15 records, 6 full page images, 33764 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.customer"
+INFO:  "customer": scanned 1 of 1 pages, containing 0 live rows and 1 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.customer"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 86 hits, 0 reads, 1 dirtied
+WAL usage: 3 records, 1 full page images, 7035 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.inquiry"
+INFO:  "inquiry": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.inquiry"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 228 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.menu_item"
+INFO:  "menu_item": scanned 1 of 1 pages, containing 8 live rows and 0 dead rows; 8 rows in sample, 8 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.menu_item"
+avg read rate: 0.000 MB/s, avg write rate: 11.719 MB/s
+buffer usage: 204 hits, 0 reads, 3 dirtied
+WAL usage: 24 records, 3 full page images, 16383 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.order"
+INFO:  "order": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.order"
+avg read rate: 0.000 MB/s, avg write rate: 2.604 MB/s
+buffer usage: 160 hits, 0 reads, 1 dirtied
+WAL usage: 1 records, 1 full page images, 7883 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.order_discount"
+INFO:  "order_discount": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.order_discount"
+avg read rate: 0.000 MB/s, avg write rate: 3.906 MB/s
+buffer usage: 82 hits, 0 reads, 1 dirtied
+WAL usage: 1 records, 1 full page images, 7083 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.order_discount_allocation"
+INFO:  "order_discount_allocation": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.order_discount_allocation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 111 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.order_item"
+INFO:  "order_item": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.order_item"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 96 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 359 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.payment_attempt"
+INFO:  "payment_attempt": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.payment_attempt"
+avg read rate: 0.000 MB/s, avg write rate: 3.906 MB/s
+buffer usage: 99 hits, 0 reads, 1 dirtied
+WAL usage: 1 records, 1 full page images, 7143 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.payment_refund"
+INFO:  "payment_refund": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.payment_refund"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 75 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.01 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.payment_refund_item_allocation"
+INFO:  "payment_refund_item_allocation": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.payment_refund_item_allocation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 81 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.payment_reversal"
+INFO:  "payment_reversal": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.payment_reversal"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 76 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.payment_transaction"
+INFO:  "payment_transaction": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.payment_transaction"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 98 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.provider_event"
+INFO:  "provider_event": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.provider_event"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 138 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.reservation"
+INFO:  "reservation": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.reservation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 241 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.staff"
+INFO:  "staff": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.staff"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 80 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.store_credit_ledger"
+INFO:  "store_credit_ledger": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.store_credit_ledger"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 93 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 343 bytes, 0 buffers full
+system usage: CPU: user: 0.01 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.table"
+INFO:  "table": scanned 1 of 1 pages, containing 9 live rows and 0 dead rows; 9 rows in sample, 9 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.table"
+avg read rate: 0.000 MB/s, avg write rate: 11.719 MB/s
+buffer usage: 244 hits, 0 reads, 3 dirtied
+WAL usage: 20 records, 3 full page images, 21488 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "grp10_shioricafedb.shioricafe_schema.menu_item"
+INFO:  finished vacuuming "grp10_shioricafedb.shioricafe_schema.menu_item": index scans: 0
+pages: 0 removed, 1 remain, 1 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 8 remain, 0 are dead but not yet removable
+removable cutoff: 11449, which was 0 XIDs old when operation ended
+new relfrozenxid: 10901, which is 5 XIDs ahead of previous value
+frozen: 0 pages from table (0.00% of total) had 0 tuples frozen
+visibility map: 1 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+avg read rate: 0.000 MB/s, avg write rate: 11.869 MB/s
+buffer usage: 38 hits, 0 reads, 4 dirtied
+WAL usage: 5 records, 4 full page images, 33338 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "grp10_shioricafedb.pg_toast.pg_toast_51502"
+INFO:  finished vacuuming "grp10_shioricafedb.pg_toast.pg_toast_51502": index scans: 0
+pages: 0 removed, 0 remain, 0 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 0 remain, 0 are dead but not yet removable
+removable cutoff: 11449, which was 0 XIDs old when operation ended
+new relfrozenxid: 11449, which is 553 XIDs ahead of previous value
+frozen: 0 pages from table (100.00% of total) had 0 tuples frozen
+visibility map: 0 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (100.00% of total) had 0 dead item identifiers removed
+avg read rate: 8.749 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 27 hits, 1 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 258 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "shioricafe_schema.menu_item"
+INFO:  "menu_item": scanned 1 of 1 pages, containing 8 live rows and 0 dead rows; 8 rows in sample, 8 estimated total rows
+INFO:  finished analyzing table "grp10_shioricafedb.shioricafe_schema.menu_item"
+avg read rate: 0.000 MB/s, avg write rate: 31.250 MB/s
+buffer usage: 109 hits, 0 reads, 4 dirtied
+WAL usage: 32 records, 3 full page images, 28330 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s

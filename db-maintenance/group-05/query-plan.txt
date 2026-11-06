@@ -1,0 +1,42 @@
+-- The public menu, grouped by category, as shown to guests and customers
+-- Account: grp05_report
+SELECT c.category_name, m.item_name, m.current_price FROM menu_item m JOIN category c ON c.category_id = m.category_id WHERE m.is_active ORDER BY c.category_name, m.item_name;
+
+-- EXPLAIN
+SET
+                                 QUERY PLAN                                  
+-----------------------------------------------------------------------------
+ Sort  (cost=2.31..2.33 rows=8 width=22)
+   Sort Key: c.category_name, m.item_name
+   ->  Hash Join  (cost=1.04..2.19 rows=8 width=22)
+         Hash Cond: (m.category_id = c.category_id)
+         ->  Seq Scan on menu_item m  (cost=0.00..1.08 rows=8 width=24)
+               Filter: is_active
+         ->  Hash  (cost=1.02..1.02 rows=2 width=14)
+               ->  Seq Scan on category c  (cost=0.00..1.02 rows=2 width=14)
+(8 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                        QUERY PLAN                                                        
+--------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=2.31..2.33 rows=8 width=22) (actual time=0.051..0.052 rows=8.00 loops=1)
+   Sort Key: c.category_name, m.item_name
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=5
+   ->  Hash Join  (cost=1.04..2.19 rows=8 width=22) (actual time=0.028..0.030 rows=8.00 loops=1)
+         Hash Cond: (m.category_id = c.category_id)
+         Buffers: shared hit=2
+         ->  Seq Scan on menu_item m  (cost=0.00..1.08 rows=8 width=24) (actual time=0.011..0.012 rows=8.00 loops=1)
+               Filter: is_active
+               Buffers: shared hit=1
+         ->  Hash  (cost=1.02..1.02 rows=2 width=14) (actual time=0.009..0.009 rows=2.00 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 9kB
+               Buffers: shared hit=1
+               ->  Seq Scan on category c  (cost=0.00..1.02 rows=2 width=14) (actual time=0.003..0.004 rows=2.00 loops=1)
+                     Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=258
+ Planning Time: 3.918 ms
+ Execution Time: 0.084 ms
+(19 rows)

@@ -1,0 +1,111 @@
+SET
+ANALYZE
+VACUUM
+   relname   | n_live_tup | n_dead_tup |          last_vacuum          |         last_analyze          
+-------------+------------+------------+-------------------------------+-------------------------------
+ reservation |          3 |          0 | 2026-11-06 20:05:28.603705+08 | 2026-11-06 20:05:28.603931+08
+(1 row)
+
+INFO:  analyzing "public.admin"
+INFO:  "admin": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.admin"
+avg read rate: 0.000 MB/s, avg write rate: 3.906 MB/s
+buffer usage: 335 hits, 0 reads, 1 dirtied
+WAL usage: 1 records, 1 full page images, 6071 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.cancellation"
+INFO:  "cancellation": scanned 1 of 1 pages, containing 1 live rows and 0 dead rows; 1 rows in sample, 1 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.cancellation"
+avg read rate: 0.000 MB/s, avg write rate: 23.438 MB/s
+buffer usage: 229 hits, 0 reads, 6 dirtied
+WAL usage: 18 records, 6 full page images, 33930 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.customer"
+INFO:  "customer": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.customer"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 113 hits, 0 reads, 1 dirtied
+WAL usage: 18 records, 1 full page images, 3161 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.employee"
+INFO:  "employee": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.employee"
+avg read rate: 0.000 MB/s, avg write rate: 15.625 MB/s
+buffer usage: 91 hits, 0 reads, 2 dirtied
+WAL usage: 15 records, 2 full page images, 9561 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.event_assignment"
+INFO:  "event_assignment": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.event_assignment"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 69 hits, 0 reads, 1 dirtied
+WAL usage: 9 records, 1 full page images, 1690 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.inventory"
+INFO:  "inventory": scanned 1 of 1 pages, containing 5 live rows and 0 dead rows; 5 rows in sample, 5 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.inventory"
+avg read rate: 0.000 MB/s, avg write rate: 15.625 MB/s
+buffer usage: 84 hits, 0 reads, 2 dirtied
+WAL usage: 13 records, 2 full page images, 6017 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.menu_item"
+INFO:  "menu_item": scanned 1 of 1 pages, containing 5 live rows and 0 dead rows; 5 rows in sample, 5 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.menu_item"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 78 hits, 0 reads, 1 dirtied
+WAL usage: 13 records, 1 full page images, 2771 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.package"
+INFO:  "package": scanned 1 of 1 pages, containing 3 live rows and 1 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.package"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 88 hits, 0 reads, 1 dirtied
+WAL usage: 12 records, 1 full page images, 2498 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.payment"
+INFO:  "payment": scanned 1 of 1 pages, containing 2 live rows and 0 dead rows; 2 rows in sample, 2 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.payment"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 96 hits, 0 reads, 1 dirtied
+WAL usage: 17 records, 1 full page images, 2493 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.reservation"
+INFO:  "reservation": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.reservation"
+avg read rate: 0.000 MB/s, avg write rate: 23.438 MB/s
+buffer usage: 118 hits, 0 reads, 3 dirtied
+WAL usage: 20 records, 3 full page images, 19432 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.reservation_menu"
+INFO:  "reservation_menu": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.reservation_menu"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 65 hits, 0 reads, 1 dirtied
+WAL usage: 9 records, 1 full page images, 1627 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.session"
+INFO:  "session": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.session"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 137 hits, 0 reads, 1 dirtied
+WAL usage: 1 records, 1 full page images, 7795 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "catering_management_db.public.reservation"
+INFO:  finished vacuuming "catering_management_db.public.reservation": index scans: 0
+pages: 0 removed, 1 remain, 1 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 3 remain, 0 are dead but not yet removable
+removable cutoff: 12045, which was 0 XIDs old when operation ended
+frozen: 0 pages from table (0.00% of total) had 0 tuples frozen
+visibility map: 0 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 12 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.reservation"
+INFO:  "reservation": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "catering_management_db.public.reservation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 68 hits, 0 reads, 0 dirtied
+WAL usage: 19 records, 0 full page images, 2030 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s

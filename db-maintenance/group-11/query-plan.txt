@@ -1,0 +1,43 @@
+-- Upcoming reservations with their rooms, as staff review them
+-- Account: grp11_report
+SELECT r.reservation_id, rm.room_name, r.reservation_date, r.start_time, r.status FROM reservation r JOIN room rm ON rm.room_id = r.room_id WHERE r.status = 'PENDING' ORDER BY r.reservation_date, r.start_time;
+
+-- EXPLAIN
+SET
+                                   QUERY PLAN                                   
+--------------------------------------------------------------------------------
+ Sort  (cost=2.17..2.17 rows=1 width=41)
+   Sort Key: r.reservation_date, r.start_time
+   ->  Hash Join  (cost=1.05..2.16 rows=1 width=41)
+         Hash Cond: (rm.room_id = r.room_id)
+         ->  Seq Scan on room rm  (cost=0.00..1.07 rows=7 width=20)
+         ->  Hash  (cost=1.04..1.04 rows=1 width=37)
+               ->  Seq Scan on reservation r  (cost=0.00..1.04 rows=1 width=37)
+                     Filter: ((status)::text = 'PENDING'::text)
+(8 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=2.17..2.17 rows=1 width=41) (actual time=0.044..0.045 rows=1.00 loops=1)
+   Sort Key: r.reservation_date, r.start_time
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=10
+   ->  Hash Join  (cost=1.05..2.16 rows=1 width=41) (actual time=0.023..0.024 rows=1.00 loops=1)
+         Hash Cond: (rm.room_id = r.room_id)
+         Buffers: shared hit=2
+         ->  Seq Scan on room rm  (cost=0.00..1.07 rows=7 width=20) (actual time=0.006..0.006 rows=7.00 loops=1)
+               Buffers: shared hit=1
+         ->  Hash  (cost=1.04..1.04 rows=1 width=37) (actual time=0.009..0.009 rows=1.00 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 9kB
+               Buffers: shared hit=1
+               ->  Seq Scan on reservation r  (cost=0.00..1.04 rows=1 width=37) (actual time=0.006..0.006 rows=1.00 loops=1)
+                     Filter: ((status)::text = 'PENDING'::text)
+                     Rows Removed by Filter: 2
+                     Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=362
+ Planning Time: 3.777 ms
+ Execution Time: 0.074 ms
+(20 rows)

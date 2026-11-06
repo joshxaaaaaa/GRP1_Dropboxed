@@ -1,0 +1,81 @@
+account  |     database      |                                 version                                 
+-----------+-------------------+-------------------------------------------------------------------------
+ grp07_dba | grp07_applicantdb | PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+(1 row)
+
+ database_size 
+---------------
+ 8878 kB
+(1 row)
+
+ object_type | count 
+-------------+-------
+ index       |    22
+ sequence    |     8
+ table       |     9
+(3 rows)
+
+      datname      | numbackends | xact_commit | xact_rollback | deadlocks 
+-------------------+-------------+-------------+---------------+-----------
+ grp07_applicantdb |           1 |         648 |            87 |         0
+(1 row)
+
+  pid  |  usename  | state  | wait_event_type | wait_event |          query_start          |                            query                             
+-------+-----------+--------+-----------------+------------+-------------------------------+--------------------------------------------------------------
+ 43592 | grp07_dba | active |                 |            | 2026-11-06 10:58:54.162727+08 | SELECT pid, usename, state, wait_event_type, wait_event, que
+(1 row)
+
+ pid | usename | duration | query 
+-----+---------+----------+-------
+(0 rows)
+
+      rolname       | rolcanlogin | rolsuper | rolcreatedb | rolcreaterole |     member_of      
+--------------------+-------------+----------+-------------+---------------+--------------------
+ grp07_app          | t           | f        | f           | f             | grp07_runtime_grp
+ grp07_backup       | t           | f        | f           | f             | grp07_backup_grp
+ grp07_backup_grp   | f           | f        | f           | f             | 
+ grp07_dba          | t           | f        | f           | f             | grp07_dba_grp
+ grp07_dba_grp      | f           | f        | f           | f             | pg_monitor
+ grp07_readonly_grp | f           | f        | f           | f             | 
+ grp07_report       | t           | f        | f           | f             | grp07_readonly_grp
+ grp07_runtime_grp  | f           | f        | f           | f             | 
+(8 rows)
+
+        relname        | n_live_tup | n_dead_tup | n_mod_since_analyze |          last_vacuum          | last_autovacuum |         last_analyze          | last_autoanalyze 
+-----------------------+------------+------------+---------------------+-------------------------------+-----------------+-------------------------------+------------------
+ department            |          5 |          3 |                   0 |                               |                 | 2026-11-06 10:57:27.051729+08 | 
+ applicant             |         10 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.060519+08 | 
+ applicant_requirement |         20 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.053192+08 | 
+ application           |         12 |          0 |                   0 | 2026-11-06 10:58:53.314231+08 |                 | 2026-11-06 10:58:53.260471+08 | 
+ application_status    |          5 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.050244+08 | 
+ interview             |          8 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.057964+08 | 
+ position              |          8 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.059059+08 | 
+ requirement           |          6 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.054739+08 | 
+ users                 |          3 |          0 |                   0 |                               |                 | 2026-11-06 10:57:27.061726+08 | 
+(9 rows)
+
+      table_name       |            index_name             | idx_scan | size  
+-----------------------+-----------------------------------+----------+-------
+ applicant             | applicant_pkey                    |       51 | 16 kB
+ applicant             | idx_applicant_last_name           |        0 | 16 kB
+ applicant             | uq_applicant_email                |       10 | 16 kB
+ applicant_requirement | idx_appreq_requirement            |        0 | 16 kB
+ applicant_requirement | pk_applicant_requirement          |       20 | 16 kB
+ application           | application_pkey                  |       21 | 16 kB
+ application           | idx_application_position          |        8 | 16 kB
+ application           | idx_application_status            |        0 | 16 kB
+ application           | uq_application_applicant_position |       20 | 16 kB
+ application_status    | application_status_pkey           |       18 | 16 kB
+ application_status    | uq_application_status_name        |        5 | 16 kB
+ department            | department_pkey                   |       14 | 16 kB
+ department            | uq_department_name                |        5 | 16 kB
+ interview             | idx_interview_application         |        0 | 16 kB
+ interview             | idx_interview_date                |        0 | 16 kB
+ interview             | interview_pkey                    |        9 | 16 kB
+ position              | idx_position_department           |        0 | 16 kB
+ position              | position_pkey                     |       29 | 16 kB
+ requirement           | requirement_pkey                  |       27 | 16 kB
+ requirement           | uq_requirement_name               |        6 | 16 kB
+ users                 | users_pkey                        |        0 | 16 kB
+ users                 | users_username_key                |        3 | 16 kB
+(22 rows)

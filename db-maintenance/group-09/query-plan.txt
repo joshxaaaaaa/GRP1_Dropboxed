@@ -1,0 +1,55 @@
+-- Active memberships with member and plan
+-- Account: grp09_report
+SELECT m.membership_id, mb.first_name, mb.last_name, p.plan_name, m.end_date FROM memberships m JOIN members mb ON mb.member_id = m.member_id JOIN membership_plans p ON p.plan_id = m.plan_id WHERE m.status = 'Active' ORDER BY m.end_date;
+
+-- EXPLAIN
+SET
+                                     QUERY PLAN                                      
+-------------------------------------------------------------------------------------
+ Sort  (cost=3.33..3.34 rows=4 width=29)
+   Sort Key: m.end_date
+   ->  Hash Join  (cost=2.18..3.29 rows=4 width=29)
+         Hash Cond: (m.plan_id = p.plan_id)
+         ->  Hash Join  (cost=1.11..2.20 rows=4 width=25)
+               Hash Cond: (m.member_id = mb.member_id)
+               ->  Seq Scan on memberships m  (cost=0.00..1.06 rows=4 width=16)
+                     Filter: ((status)::text = 'Active'::text)
+               ->  Hash  (cost=1.05..1.05 rows=5 width=17)
+                     ->  Seq Scan on members mb  (cost=0.00..1.05 rows=5 width=17)
+         ->  Hash  (cost=1.03..1.03 rows=3 width=12)
+               ->  Seq Scan on membership_plans p  (cost=0.00..1.03 rows=3 width=12)
+(12 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                            QUERY PLAN                                                            
+----------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=3.33..3.34 rows=4 width=29) (actual time=0.059..0.060 rows=4.00 loops=1)
+   Sort Key: m.end_date
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=6
+   ->  Hash Join  (cost=2.18..3.29 rows=4 width=29) (actual time=0.039..0.042 rows=4.00 loops=1)
+         Hash Cond: (m.plan_id = p.plan_id)
+         Buffers: shared hit=3
+         ->  Hash Join  (cost=1.11..2.20 rows=4 width=25) (actual time=0.016..0.018 rows=4.00 loops=1)
+               Hash Cond: (m.member_id = mb.member_id)
+               Buffers: shared hit=2
+               ->  Seq Scan on memberships m  (cost=0.00..1.06 rows=4 width=16) (actual time=0.004..0.005 rows=4.00 loops=1)
+                     Filter: ((status)::text = 'Active'::text)
+                     Rows Removed by Filter: 1
+                     Buffers: shared hit=1
+               ->  Hash  (cost=1.05..1.05 rows=5 width=17) (actual time=0.006..0.006 rows=5.00 loops=1)
+                     Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                     Buffers: shared hit=1
+                     ->  Seq Scan on members mb  (cost=0.00..1.05 rows=5 width=17) (actual time=0.003..0.003 rows=5.00 loops=1)
+                           Buffers: shared hit=1
+         ->  Hash  (cost=1.03..1.03 rows=3 width=12) (actual time=0.017..0.018 rows=3.00 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 9kB
+               Buffers: shared hit=1
+               ->  Seq Scan on membership_plans p  (cost=0.00..1.03 rows=3 width=12) (actual time=0.011..0.012 rows=3.00 loops=1)
+                     Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=297
+ Planning Time: 2.707 ms
+ Execution Time: 0.107 ms
+(28 rows)

@@ -1,0 +1,119 @@
+account  |      database      |                                 version                                 
+-----------+--------------------+-------------------------------------------------------------------------
+ grp05_dba | grp10_shioricafedb | PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+(1 row)
+
+ database_size 
+---------------
+ 9822 kB
+(1 row)
+
+ object_type | count 
+-------------+-------
+ index       |    50
+ sequence    |    18
+ table       |    18
+ view        |     3
+(4 rows)
+
+      datname       | numbackends | xact_commit | xact_rollback | deadlocks 
+--------------------+-------------+-------------+---------------+-----------
+ grp10_shioricafedb |           1 |         182 |            28 |         0
+(1 row)
+
+  pid  |  usename  | state  | wait_event_type | wait_event |          query_start          |                            query                             
+-------+-----------+--------+-----------------+------------+-------------------------------+--------------------------------------------------------------
+ 48972 | grp05_dba | active |                 |            | 2026-11-06 20:05:13.673965+08 | SELECT pid, usename, state, wait_event_type, wait_event, que
+(1 row)
+
+ pid | usename | duration | query 
+-----+---------+----------+-------
+(0 rows)
+
+      rolname       | rolcanlogin | rolsuper | rolcreatedb | rolcreaterole |     member_of      
+--------------------+-------------+----------+-------------+---------------+--------------------
+ grp05_app          | t           | f        | f           | f             | grp05_runtime_grp
+ grp05_backup       | t           | f        | f           | f             | grp05_backup_grp
+ grp05_backup_grp   | f           | f        | f           | f             | 
+ grp05_dba          | t           | f        | f           | f             | grp05_dba_grp
+ grp05_dba_grp      | f           | f        | f           | f             | pg_monitor
+ grp05_readonly_grp | f           | f        | f           | f             | 
+ grp05_report       | t           | f        | f           | f             | grp05_readonly_grp
+ grp05_runtime_grp  | f           | f        | f           | f             | 
+(8 rows)
+
+            relname             | n_live_tup | n_dead_tup | n_mod_since_analyze |          last_vacuum          | last_autovacuum |         last_analyze          | last_autoanalyze 
+--------------------------------+------------+------------+---------------------+-------------------------------+-----------------+-------------------------------+------------------
+ customer                       |          0 |          1 |                   0 |                               |                 |                               | 
+ category                       |          2 |          0 |                   2 |                               |                 |                               | 
+ inquiry                        |          0 |          0 |                   0 |                               |                 |                               | 
+ menu_item                      |          8 |          0 |                   8 |                               |                 |                               | 
+ order                          |          0 |          0 |                   0 |                               |                 |                               | 
+ order_discount                 |          0 |          0 |                   0 |                               |                 |                               | 
+ order_discount_allocation      |          0 |          0 |                   0 |                               |                 |                               | 
+ order_item                     |          0 |          0 |                   0 |                               |                 |                               | 
+ payment_attempt                |          0 |          0 |                   0 |                               |                 |                               | 
+ payment_refund                 |          0 |          0 |                   0 |                               |                 |                               | 
+ payment_refund_item_allocation |          0 |          0 |                   0 |                               |                 |                               | 
+ payment_reversal               |          0 |          0 |                   0 |                               |                 |                               | 
+ payment_transaction            |          0 |          0 |                   0 |                               |                 |                               | 
+ provider_event                 |          0 |          0 |                   0 |                               |                 |                               | 
+ reservation                    |          0 |          0 |                   0 | 2026-11-06 20:05:12.117107+08 |                 | 2026-11-06 20:05:12.021117+08 | 
+ staff                          |          0 |          0 |                   0 |                               |                 |                               | 
+ store_credit_ledger            |          0 |          0 |                   0 |                               |                 |                               | 
+ table                          |          9 |          0 |                   9 |                               |                 |                               | 
+(18 rows)
+
+           table_name           |               index_name               | idx_scan |    size    
+--------------------------------+----------------------------------------+----------+------------
+ category                       | category_category_name_key             |        2 | 16 kB
+ category                       | category_pkey                          |        8 | 16 kB
+ customer                       | customer_pkey                          |        0 | 16 kB
+ customer                       | uq_customer_email_lower                |        0 | 16 kB
+ inquiry                        | inquiry_pkey                           |        0 | 8192 bytes
+ menu_item                      | menu_item_pkey                         |        0 | 16 kB
+ menu_item                      | uq_menu_item_name_lower                |        8 | 16 kB
+ order                          | ix_order_created_at                    |        0 | 8192 bytes
+ order                          | ix_order_preparation_status            |        0 | 8192 bytes
+ order                          | ix_order_reservation_id                |        0 | 8192 bytes
+ order                          | ix_order_table_id                      |        0 | 8192 bytes
+ order                          | pk_order                               |        0 | 8192 bytes
+ order_discount                 | ix_order_discount_order_id             |        0 | 8192 bytes
+ order_discount                 | pk_order_discount                      |        0 | 8192 bytes
+ order_discount                 | uq_order_discount_order_pair           |        0 | 8192 bytes
+ order_discount_allocation      | ix_discount_allocation_discount_id     |        0 | 8192 bytes
+ order_discount_allocation      | ix_discount_allocation_item_id         |        0 | 8192 bytes
+ order_discount_allocation      | ix_discount_allocation_order_id        |        0 | 8192 bytes
+ order_discount_allocation      | pk_order_discount_allocation           |        0 | 8192 bytes
+ order_discount_allocation      | uq_discount_allocation_item            |        0 | 8192 bytes
+ order_item                     | ix_order_item_menu_item_id             |        0 | 8192 bytes
+ order_item                     | ix_order_item_order_id                 |        0 | 8192 bytes
+ order_item                     | pk_order_item                          |        0 | 8192 bytes
+ payment_attempt                | ix_attempt_order                       |        0 | 8192 bytes
+ payment_attempt                | ix_attempt_status                      |        0 | 8192 bytes
+ payment_attempt                | payment_attempt_pkey                   |        0 | 8192 bytes
+ payment_refund                 | ix_refund_transaction                  |        0 | 8192 bytes
+ payment_refund                 | payment_refund_pkey                    |        0 | 8192 bytes
+ payment_refund_item_allocation | ix_refund_allocation_refund            |        0 | 8192 bytes
+ payment_refund_item_allocation | payment_refund_item_allocation_pkey    |        0 | 8192 bytes
+ payment_refund_item_allocation | uq_refund_item                         |        0 | 8192 bytes
+ payment_reversal               | ix_reversal_transaction                |        0 | 8192 bytes
+ payment_reversal               | payment_reversal_pkey                  |        0 | 8192 bytes
+ payment_transaction            | ix_transaction_attempt                 |        0 | 8192 bytes
+ payment_transaction            | ix_transaction_order                   |        0 | 8192 bytes
+ payment_transaction            | payment_transaction_pkey               |        0 | 8192 bytes
+ provider_event                 | ix_provider_event_status               |        0 | 8192 bytes
+ provider_event                 | provider_event_pkey                    |        0 | 8192 bytes
+ provider_event                 | uq_provider_event_reference            |        0 | 8192 bytes
+ reservation                    | ex_reservation_no_overlap              |        0 | 8192 bytes
+ reservation                    | reservation_pkey                       |        0 | 8192 bytes
+ reservation                    | uq_reservation_id_customer             |        0 | 8192 bytes
+ reservation                    | uq_reservation_one_active_per_customer |        0 | 8192 bytes
+ staff                          | staff_pkey                             |        0 | 8192 bytes
+ staff                          | uq_staff_email_lower                   |        0 | 8192 bytes
+ store_credit_ledger            | ix_credit_customer                     |        0 | 8192 bytes
+ store_credit_ledger            | ix_credit_order                        |        0 | 8192 bytes
+ store_credit_ledger            | store_credit_ledger_pkey               |        0 | 8192 bytes
+ table                          | table_pkey                             |        9 | 16 kB
+ table                          | uq_table_number                        |        0 | 16 kB
+(50 rows)

@@ -1,0 +1,105 @@
+account  |   database    |                                 version                                 
+-----------+---------------+-------------------------------------------------------------------------
+ grp06_dba | car_rental_db | PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+(1 row)
+
+ database_size 
+---------------
+ 9350 kB
+(1 row)
+
+ object_type | count 
+-------------+-------
+ index       |    38
+ sequence    |    17
+ table       |    17
+(3 rows)
+
+    datname    | numbackends | xact_commit | xact_rollback | deadlocks 
+---------------+-------------+-------------+---------------+-----------
+ car_rental_db |           1 |         943 |            92 |         0
+(1 row)
+
+  pid  |  usename  | state  | wait_event_type | wait_event |          query_start          |                            query                             
+-------+-----------+--------+-----------------+------------+-------------------------------+--------------------------------------------------------------
+ 22792 | grp06_dba | active |                 |            | 2026-11-06 10:58:46.104774+08 | SELECT pid, usename, state, wait_event_type, wait_event, que
+(1 row)
+
+ pid | usename | duration | query 
+-----+---------+----------+-------
+(0 rows)
+
+      rolname       | rolcanlogin | rolsuper | rolcreatedb | rolcreaterole |     member_of      
+--------------------+-------------+----------+-------------+---------------+--------------------
+ grp06_app          | t           | f        | f           | f             | grp06_runtime_grp
+ grp06_backup       | t           | f        | f           | f             | grp06_backup_grp
+ grp06_backup_grp   | f           | f        | f           | f             | 
+ grp06_dba          | t           | f        | f           | f             | grp06_dba_grp
+ grp06_dba_grp      | f           | f        | f           | f             | pg_monitor
+ grp06_readonly_grp | f           | f        | f           | f             | 
+ grp06_report       | t           | f        | f           | f             | grp06_readonly_grp
+ grp06_runtime_grp  | f           | f        | f           | f             | 
+(8 rows)
+
+       relname       | n_live_tup | n_dead_tup | n_mod_since_analyze |          last_vacuum          | last_autovacuum |         last_analyze          | last_autoanalyze 
+---------------------+------------+------------+---------------------+-------------------------------+-----------------+-------------------------------+------------------
+ vehicle_category    |          4 |          3 |                   0 |                               |                 | 2026-11-06 10:57:19.119379+08 | 
+ audit_log           |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.12114+08  | 
+ cancellation        |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.12222+08  | 
+ customer            |          2 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.117581+08 | 
+ damage_fee          |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.123324+08 | 
+ damage_incident     |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.123875+08 | 
+ driver_license      |          1 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.125408+08 | 
+ inspection_item     |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.126439+08 | 
+ inspection_photo    |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.131079+08 | 
+ payment             |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.12748+08  | 
+ rental              |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.115626+08 | 
+ rental_rate         |          4 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.12958+08  | 
+ rental_terms        |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.130543+08 | 
+ staff               |          4 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.128568+08 | 
+ vehicle             |          8 |          0 |                   0 | 2026-11-06 10:58:45.291222+08 |                 | 2026-11-06 10:58:45.237407+08 | 
+ vehicle_inspection  |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.12003+08  | 
+ vehicle_maintenance |          0 |          0 |                   0 |                               |                 | 2026-11-06 10:57:19.133415+08 | 
+(17 rows)
+
+     table_name      |             index_name             | idx_scan |    size    
+---------------------+------------------------------------+----------+------------
+ audit_log           | audit_log_pkey                     |        0 | 8192 bytes
+ audit_log           | idx_audit_datetime                 |        0 | 8192 bytes
+ audit_log           | idx_audit_staff                    |        0 | 8192 bytes
+ cancellation        | cancellation_pkey                  |        0 | 8192 bytes
+ cancellation        | cancellation_rental_id_key         |        0 | 8192 bytes
+ customer            | customer_email_key                 |        1 | 16 kB
+ customer            | customer_pkey                      |        1 | 16 kB
+ damage_fee          | damage_fee_damage_id_key           |        0 | 8192 bytes
+ damage_fee          | damage_fee_pkey                    |        0 | 8192 bytes
+ damage_fee          | idx_damage_fee_status              |        0 | 8192 bytes
+ damage_incident     | damage_incident_pkey               |        0 | 8192 bytes
+ driver_license      | driver_license_pkey                |        0 | 16 kB
+ driver_license      | idx_license_customer               |        0 | 16 kB
+ driver_license      | idx_license_status                 |        0 | 16 kB
+ inspection_item     | inspection_item_pkey               |        0 | 8192 bytes
+ inspection_item     | inspection_item_unique             |        0 | 8192 bytes
+ inspection_photo    | inspection_photo_pkey              |        0 | 8192 bytes
+ payment             | idx_payment_status                 |        0 | 8192 bytes
+ payment             | payment_payment_code_key           |        1 | 8192 bytes
+ payment             | payment_pkey                       |        0 | 8192 bytes
+ rental              | idx_rental_customer                |        0 | 8192 bytes
+ rental              | idx_rental_dates                   |        0 | 8192 bytes
+ rental              | idx_rental_status                  |        0 | 8192 bytes
+ rental              | idx_rental_vehicle                 |        0 | 8192 bytes
+ rental              | rental_pkey                        |        0 | 8192 bytes
+ rental_rate         | rental_rate_pkey                   |        0 | 16 kB
+ rental_terms        | rental_terms_pkey                  |        0 | 8192 bytes
+ rental_terms        | rental_terms_rental_id_key         |        0 | 8192 bytes
+ staff               | staff_email_key                    |        1 | 16 kB
+ staff               | staff_pkey                         |        1 | 16 kB
+ vehicle             | idx_vehicle_status                 |        0 | 16 kB
+ vehicle             | vehicle_pkey                       |        0 | 16 kB
+ vehicle             | vehicle_plate_number_key           |        0 | 16 kB
+ vehicle_category    | vehicle_category_category_name_key |        8 | 16 kB
+ vehicle_category    | vehicle_category_pkey              |       20 | 16 kB
+ vehicle_inspection  | vehicle_inspection_pkey            |        0 | 8192 bytes
+ vehicle_maintenance | idx_maintenance_vehicle            |        0 | 8192 bytes
+ vehicle_maintenance | vehicle_maintenance_pkey           |        0 | 8192 bytes
+(38 rows)

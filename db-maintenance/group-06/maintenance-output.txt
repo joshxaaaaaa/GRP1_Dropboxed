@@ -1,0 +1,146 @@
+SET
+ANALYZE
+VACUUM
+ relname | n_live_tup | n_dead_tup |          last_vacuum          |         last_analyze          
+---------+------------+------------+-------------------------------+-------------------------------
+ vehicle |          8 |          0 | 2026-11-06 10:58:46.530811+08 | 2026-11-06 10:58:46.531049+08
+(1 row)
+
+INFO:  analyzing "public.audit_log"
+INFO:  "audit_log": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.audit_log"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 344 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.cancellation"
+INFO:  "cancellation": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.cancellation"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 154 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.customer"
+INFO:  "customer": scanned 1 of 1 pages, containing 2 live rows and 0 dead rows; 2 rows in sample, 2 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.customer"
+avg read rate: 0.000 MB/s, avg write rate: 23.438 MB/s
+buffer usage: 149 hits, 0 reads, 6 dirtied
+WAL usage: 15 records, 6 full page images, 42488 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.damage_fee"
+INFO:  "damage_fee": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.damage_fee"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 73 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.01 s, elapsed: 0.00 s
+INFO:  analyzing "public.damage_incident"
+INFO:  "damage_incident": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.damage_incident"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 48 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.driver_license"
+INFO:  "driver_license": scanned 1 of 1 pages, containing 1 live rows and 0 dead rows; 1 rows in sample, 1 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.driver_license"
+avg read rate: 0.000 MB/s, avg write rate: 15.625 MB/s
+buffer usage: 181 hits, 0 reads, 2 dirtied
+WAL usage: 12 records, 2 full page images, 13302 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.inspection_item"
+INFO:  "inspection_item": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.inspection_item"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 53 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.inspection_photo"
+INFO:  "inspection_photo": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.inspection_photo"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 42 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.payment"
+INFO:  "payment": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.payment"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 85 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.rental"
+INFO:  "rental": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.rental"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 140 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.rental_rate"
+INFO:  "rental_rate": scanned 1 of 1 pages, containing 4 live rows and 0 dead rows; 4 rows in sample, 4 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.rental_rate"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 66 hits, 0 reads, 0 dirtied
+WAL usage: 6 records, 0 full page images, 466 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.rental_terms"
+INFO:  "rental_terms": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.rental_terms"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 53 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.staff"
+INFO:  "staff": scanned 1 of 1 pages, containing 4 live rows and 0 dead rows; 4 rows in sample, 4 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.staff"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 94 hits, 0 reads, 0 dirtied
+WAL usage: 10 records, 0 full page images, 786 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.vehicle"
+INFO:  "vehicle": scanned 1 of 1 pages, containing 8 live rows and 0 dead rows; 8 rows in sample, 8 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.vehicle"
+avg read rate: 0.000 MB/s, avg write rate: 3.906 MB/s
+buffer usage: 137 hits, 0 reads, 1 dirtied
+WAL usage: 13 records, 1 full page images, 6909 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.vehicle_category"
+INFO:  "vehicle_category": scanned 1 of 1 pages, containing 4 live rows and 3 dead rows; 4 rows in sample, 4 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.vehicle_category"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 66 hits, 0 reads, 1 dirtied
+WAL usage: 7 records, 1 full page images, 1105 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.vehicle_inspection"
+INFO:  "vehicle_inspection": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.vehicle_inspection"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 51 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.vehicle_maintenance"
+INFO:  "vehicle_maintenance": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.vehicle_maintenance"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 62 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "car_rental_db.public.vehicle"
+INFO:  finished vacuuming "car_rental_db.public.vehicle": index scans: 0
+pages: 0 removed, 1 remain, 1 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 8 remain, 0 are dead but not yet removable
+removable cutoff: 8202, which was 0 XIDs old when operation ended
+frozen: 0 pages from table (0.00% of total) had 0 tuples frozen
+visibility map: 0 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 14 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "public.vehicle"
+INFO:  "vehicle": scanned 1 of 1 pages, containing 8 live rows and 0 dead rows; 8 rows in sample, 8 estimated total rows
+INFO:  finished analyzing table "car_rental_db.public.vehicle"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 66 hits, 0 reads, 0 dirtied
+WAL usage: 12 records, 0 full page images, 912 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s

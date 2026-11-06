@@ -1,0 +1,87 @@
+account  |         database          |                                 version                                 
+-----------+---------------------------+-------------------------------------------------------------------------
+ grp02_dba | grp02_event_management_db | PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+(1 row)
+
+ database_size 
+---------------
+ 9102 kB
+(1 row)
+
+ object_type | count 
+-------------+-------
+ index       |    27
+ sequence    |     9
+ table       |    10
+(3 rows)
+
+          datname          | numbackends | xact_commit | xact_rollback | deadlocks 
+---------------------------+-------------+-------------+---------------+-----------
+ grp02_event_management_db |           1 |         234 |            29 |         0
+(1 row)
+
+  pid  |  usename  | state  | wait_event_type | wait_event |          query_start          |                            query                             
+-------+-----------+--------+-----------------+------------+-------------------------------+--------------------------------------------------------------
+ 41704 | grp02_dba | active |                 |            | 2026-11-06 11:35:54.266556+08 | SELECT pid, usename, state, wait_event_type, wait_event, que
+(1 row)
+
+ pid | usename | duration | query 
+-----+---------+----------+-------
+(0 rows)
+
+      rolname       | rolcanlogin | rolsuper | rolcreatedb | rolcreaterole |     member_of      
+--------------------+-------------+----------+-------------+---------------+--------------------
+ grp02_app          | t           | f        | f           | f             | grp02_runtime_grp
+ grp02_backup       | t           | f        | f           | f             | grp02_backup_grp
+ grp02_backup_grp   | f           | f        | f           | f             | 
+ grp02_dba          | t           | f        | f           | f             | grp02_dba_grp
+ grp02_dba_grp      | f           | f        | f           | f             | pg_monitor
+ grp02_readonly_grp | f           | f        | f           | f             | 
+ grp02_report       | t           | f        | f           | f             | grp02_readonly_grp
+ grp02_runtime_grp  | f           | f        | f           | f             | 
+(8 rows)
+
+        relname        | n_live_tup | n_dead_tup | n_mod_since_analyze |          last_vacuum          | last_autovacuum |         last_analyze          | last_autoanalyze 
+-----------------------+------------+------------+---------------------+-------------------------------+-----------------+-------------------------------+------------------
+ venue                 |          0 |          1 |                   0 |                               |                 |                               | 
+ attendance            |          0 |          0 |                   0 |                               |                 |                               | 
+ audit_log             |          0 |          0 |                   0 |                               |                 |                               | 
+ event                 |          0 |          0 |                   0 | 2026-11-06 11:35:51.852495+08 |                 | 2026-11-06 11:35:51.760487+08 | 
+ event_assignment      |          0 |          0 |                   0 |                               |                 |                               | 
+ event_schedule        |          0 |          0 |                   0 |                               |                 |                               | 
+ flyway_schema_history |          3 |          0 |                   3 |                               |                 |                               | 
+ participant           |          0 |          0 |                   0 |                               |                 |                               | 
+ role                  |          2 |          0 |                   2 |                               |                 |                               | 
+ user_account          |          2 |          0 |                   2 |                               |                 |                               | 
+(10 rows)
+
+      table_name       |           index_name            | idx_scan |    size    
+-----------------------+---------------------------------+----------+------------
+ attendance            | attendance_pkey                 |        0 | 8192 bytes
+ attendance            | ix_attendance_participant_id    |        0 | 8192 bytes
+ attendance            | uq_attendance_event_participant |        0 | 8192 bytes
+ audit_log             | audit_log_pkey                  |        0 | 8192 bytes
+ audit_log             | ix_audit_log_timestamp          |        0 | 8192 bytes
+ audit_log             | ix_audit_log_user_id            |        0 | 8192 bytes
+ event                 | event_pkey                      |        0 | 8192 bytes
+ event                 | ex_event_venue_no_overlap       |        0 | 8192 bytes
+ event                 | ix_event_event_date             |        0 | 8192 bytes
+ event                 | ix_event_organizer_id           |        0 | 8192 bytes
+ event                 | ix_event_venue_id               |        0 | 8192 bytes
+ event_assignment      | event_assignment_pkey           |        0 | 8192 bytes
+ event_assignment      | ix_event_assignment_event_id    |        0 | 8192 bytes
+ event_schedule        | event_schedule_pkey             |        0 | 8192 bytes
+ event_schedule        | ix_event_schedule_event_id      |        0 | 8192 bytes
+ flyway_schema_history | flyway_schema_history_pk        |        0 | 16 kB
+ flyway_schema_history | flyway_schema_history_s_idx     |        0 | 16 kB
+ participant           | participant_pkey                |        0 | 8192 bytes
+ participant           | uq_participant_student_number   |        0 | 8192 bytes
+ role                  | role_pkey                       |        2 | 16 kB
+ role                  | uq_role_name                    |        4 | 16 kB
+ user_account          | ix_user_account_role_id         |        2 | 16 kB
+ user_account          | uq_user_account_email_lower     |        0 | 16 kB
+ user_account          | uq_user_account_username_lower  |        0 | 16 kB
+ user_account          | user_account_pkey               |        0 | 16 kB
+ venue                 | uq_venue_name                   |        0 | 16 kB
+ venue                 | venue_pkey                      |        0 | 16 kB
+(27 rows)

@@ -1,0 +1,40 @@
+-- Per-event attendance summary, as shown in the Super Admin attendance report
+-- Account: grp02_report
+SELECT e.event_id, e.event_name, a.attendance_status, COUNT(*) AS total FROM attendance a JOIN event e ON e.event_id = a.event_id WHERE e.event_status = 'Completed' GROUP BY e.event_id, e.event_name, a.attendance_status ORDER BY e.event_id;
+
+-- EXPLAIN
+SET
+                                  QUERY PLAN                                   
+-------------------------------------------------------------------------------
+ GroupAggregate  (cost=0.02..0.05 rows=1 width=288)
+   Group Key: e.event_id, a.attendance_status
+   ->  Sort  (cost=0.02..0.03 rows=1 width=280)
+         Sort Key: e.event_id, a.attendance_status
+         ->  Nested Loop  (cost=0.00..0.01 rows=1 width=280)
+               Join Filter: (a.event_id = e.event_id)
+               ->  Seq Scan on attendance a  (cost=0.00..0.00 rows=1 width=62)
+               ->  Seq Scan on event e  (cost=0.00..0.00 rows=1 width=222)
+                     Filter: ((event_status)::text = 'Completed'::text)
+(9 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                         QUERY PLAN                                                         
+----------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=0.02..0.05 rows=1 width=288) (actual time=0.018..0.019 rows=0.00 loops=1)
+   Group Key: e.event_id, a.attendance_status
+   Buffers: shared hit=6
+   ->  Sort  (cost=0.02..0.03 rows=1 width=280) (actual time=0.018..0.018 rows=0.00 loops=1)
+         Sort Key: e.event_id, a.attendance_status
+         Sort Method: quicksort  Memory: 25kB
+         Buffers: shared hit=6
+         ->  Nested Loop  (cost=0.00..0.01 rows=1 width=280) (actual time=0.005..0.005 rows=0.00 loops=1)
+               Join Filter: (a.event_id = e.event_id)
+               ->  Seq Scan on attendance a  (cost=0.00..0.00 rows=1 width=62) (actual time=0.005..0.005 rows=0.00 loops=1)
+               ->  Seq Scan on event e  (cost=0.00..0.00 rows=1 width=222) (never executed)
+                     Filter: ((event_status)::text = 'Completed'::text)
+ Planning:
+   Buffers: shared hit=254
+ Planning Time: 3.077 ms
+ Execution Time: 0.048 ms
+(16 rows)

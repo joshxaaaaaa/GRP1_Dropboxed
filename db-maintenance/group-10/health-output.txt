@@ -1,0 +1,79 @@
+account  |    database     |                                 version                                 
+-----------+-----------------+-------------------------------------------------------------------------
+ grp10_dba | grp10_unisyncdb | PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+(1 row)
+
+ database_size 
+---------------
+ 9134 kB
+(1 row)
+
+ object_type | count 
+-------------+-------
+ index       |    21
+ sequence    |     8
+ table       |     8
+(3 rows)
+
+     datname     | numbackends | xact_commit | xact_rollback | deadlocks 
+-----------------+-------------+-------------+---------------+-----------
+ grp10_unisyncdb |           1 |         165 |            29 |         0
+(1 row)
+
+  pid  |  usename  | state  | wait_event_type | wait_event |          query_start          |                            query                             
+-------+-----------+--------+-----------------+------------+-------------------------------+--------------------------------------------------------------
+ 45800 | grp10_dba | active |                 |            | 2026-11-06 20:05:40.599275+08 | SELECT pid, usename, state, wait_event_type, wait_event, que
+(1 row)
+
+ pid | usename | duration | query 
+-----+---------+----------+-------
+(0 rows)
+
+      rolname       | rolcanlogin | rolsuper | rolcreatedb | rolcreaterole |     member_of      
+--------------------+-------------+----------+-------------+---------------+--------------------
+ grp10_app          | t           | f        | f           | f             | grp10_runtime_grp
+ grp10_backup       | t           | f        | f           | f             | grp10_backup_grp
+ grp10_backup_grp   | f           | f        | f           | f             | 
+ grp10_dba          | t           | f        | f           | f             | grp10_dba_grp
+ grp10_dba_grp      | f           | f        | f           | f             | pg_monitor
+ grp10_readonly_grp | f           | f        | f           | f             | 
+ grp10_report       | t           | f        | f           | f             | grp10_readonly_grp
+ grp10_runtime_grp  | f           | f        | f           | f             | 
+(8 rows)
+
+    relname     | n_live_tup | n_dead_tup | n_mod_since_analyze |          last_vacuum          | last_autovacuum |         last_analyze          |       last_autoanalyze        
+----------------+------------+------------+---------------------+-------------------------------+-----------------+-------------------------------+-------------------------------
+ venue          |         50 |          1 |                  50 |                               |                 |                               | 
+ account        |        130 |          0 |                   0 |                               |                 |                               | 2026-11-06 20:04:24.593519+08
+ event          |         50 |          0 |                   0 | 2026-11-06 20:05:39.097954+08 |                 | 2026-11-06 20:05:38.993625+08 | 
+ event_schedule |        119 |          0 |                   0 |                               |                 |                               | 2026-11-06 20:04:24.602118+08
+ membership     |        239 |          0 |                   0 |                               |                 |                               | 2026-11-06 20:04:24.59874+08
+ notification   |          0 |          0 |                   0 |                               |                 |                               | 
+ organization   |         30 |          0 |                  30 |                               |                 |                               | 
+ registration   |        945 |          0 |                   0 |                               |                 |                               | 2026-11-06 20:04:24.608075+08
+(8 rows)
+
+   table_name   |            index_name            | idx_scan |    size    
+----------------+----------------------------------+----------+------------
+ account        | account_email_key                |        0 | 16 kB
+ account        | account_pkey                     |     1235 | 16 kB
+ event          | event_pkey                       |     1065 | 16 kB
+ event          | idx_event_organization           |        0 | 16 kB
+ event_schedule | event_schedule_pkey              |        1 | 16 kB
+ event_schedule | idx_schedule_date_venue          |        0 | 16 kB
+ event_schedule | idx_schedule_status              |        0 | 16 kB
+ membership     | idx_membership_account           |        0 | 16 kB
+ membership     | idx_membership_organization      |        0 | 16 kB
+ membership     | membership_pkey                  |        1 | 16 kB
+ membership     | uq_account_organization          |        0 | 16 kB
+ notification   | idx_notification_account_created |        0 | 8192 bytes
+ notification   | notification_pkey                |        0 | 8192 bytes
+ organization   | organization_pkey                |      290 | 16 kB
+ registration   | idx_registration_account         |        0 | 32 kB
+ registration   | idx_registration_event           |        0 | 16 kB
+ registration   | registration_pkey                |        1 | 40 kB
+ registration   | uq_account_event                 |        0 | 56 kB
+ venue          | idx_venue_account                |        0 | 16 kB
+ venue          | uq_provider_venue_name           |        0 | 16 kB
+ venue          | venue_pkey                       |      120 | 16 kB
+(21 rows)

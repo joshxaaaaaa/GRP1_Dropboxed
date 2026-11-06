@@ -1,0 +1,67 @@
+-- The applications list with applicant, position and status
+-- Account: grp07_report
+SELECT a.application_id, ap.first_name, ap.last_name, p.position_title, s.status_name, a.application_date FROM application a JOIN applicant ap ON ap.applicant_id = a.applicant_id JOIN position p ON p.position_id = a.position_id JOIN application_status s ON s.status_id = a.status_id WHERE s.status_name <> 'Rejected' ORDER BY a.application_date DESC;
+
+-- EXPLAIN
+SET
+                                            QUERY PLAN                                             
+---------------------------------------------------------------------------------------------------
+ Sort  (cost=4.93..4.96 rows=10 width=48)
+   Sort Key: a.application_date DESC
+   ->  Hash Join  (cost=3.52..4.77 rows=10 width=48)
+         Hash Cond: (a.position_id = p.position_id)
+         ->  Hash Join  (cost=2.34..3.55 rows=10 width=34)
+               Hash Cond: (a.applicant_id = ap.applicant_id)
+               ->  Hash Join  (cost=1.11..2.29 rows=10 width=25)
+                     Hash Cond: (a.status_id = s.status_id)
+                     ->  Seq Scan on application a  (cost=0.00..1.12 rows=12 width=20)
+                     ->  Hash  (cost=1.06..1.06 rows=4 width=13)
+                           ->  Seq Scan on application_status s  (cost=0.00..1.06 rows=4 width=13)
+                                 Filter: ((status_name)::text <> 'Rejected'::text)
+               ->  Hash  (cost=1.10..1.10 rows=10 width=17)
+                     ->  Seq Scan on applicant ap  (cost=0.00..1.10 rows=10 width=17)
+         ->  Hash  (cost=1.08..1.08 rows=8 width=22)
+               ->  Seq Scan on "position" p  (cost=0.00..1.08 rows=8 width=22)
+(16 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                                   QUERY PLAN                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=4.93..4.96 rows=10 width=48) (actual time=0.090..0.091 rows=10.00 loops=1)
+   Sort Key: a.application_date DESC
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=7
+   ->  Hash Join  (cost=3.52..4.77 rows=10 width=48) (actual time=0.066..0.071 rows=10.00 loops=1)
+         Hash Cond: (a.position_id = p.position_id)
+         Buffers: shared hit=4
+         ->  Hash Join  (cost=2.34..3.55 rows=10 width=34) (actual time=0.040..0.043 rows=10.00 loops=1)
+               Hash Cond: (a.applicant_id = ap.applicant_id)
+               Buffers: shared hit=3
+               ->  Hash Join  (cost=1.11..2.29 rows=10 width=25) (actual time=0.026..0.028 rows=10.00 loops=1)
+                     Hash Cond: (a.status_id = s.status_id)
+                     Buffers: shared hit=2
+                     ->  Seq Scan on application a  (cost=0.00..1.12 rows=12 width=20) (actual time=0.004..0.004 rows=12.00 loops=1)
+                           Buffers: shared hit=1
+                     ->  Hash  (cost=1.06..1.06 rows=4 width=13) (actual time=0.014..0.014 rows=4.00 loops=1)
+                           Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                           Buffers: shared hit=1
+                           ->  Seq Scan on application_status s  (cost=0.00..1.06 rows=4 width=13) (actual time=0.008..0.008 rows=4.00 loops=1)
+                                 Filter: ((status_name)::text <> 'Rejected'::text)
+                                 Rows Removed by Filter: 1
+                                 Buffers: shared hit=1
+               ->  Hash  (cost=1.10..1.10 rows=10 width=17) (actual time=0.007..0.007 rows=10.00 loops=1)
+                     Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                     Buffers: shared hit=1
+                     ->  Seq Scan on applicant ap  (cost=0.00..1.10 rows=10 width=17) (actual time=0.003..0.004 rows=10.00 loops=1)
+                           Buffers: shared hit=1
+         ->  Hash  (cost=1.08..1.08 rows=8 width=22) (actual time=0.021..0.021 rows=8.00 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 9kB
+               Buffers: shared hit=1
+               ->  Seq Scan on "position" p  (cost=0.00..1.08 rows=8 width=22) (actual time=0.012..0.013 rows=8.00 loops=1)
+                     Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=391
+ Planning Time: 5.706 ms
+ Execution Time: 0.205 ms
+(36 rows)

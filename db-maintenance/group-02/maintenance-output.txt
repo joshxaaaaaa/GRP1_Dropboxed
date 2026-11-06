@@ -1,0 +1,112 @@
+SET
+ANALYZE
+VACUUM
+ relname | n_live_tup | n_dead_tup |          last_vacuum          |         last_analyze          
+---------+------------+------------+-------------------------------+-------------------------------
+ event   |          0 |          0 | 2026-11-06 11:35:54.973512+08 | 2026-11-06 11:35:54.974025+08
+(1 row)
+
+INFO:  analyzing "school_event_management_db.attendance"
+INFO:  "attendance": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.attendance"
+avg read rate: 0.000 MB/s, avg write rate: 3.906 MB/s
+buffer usage: 305 hits, 0 reads, 1 dirtied
+WAL usage: 1 records, 1 full page images, 6759 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.audit_log"
+INFO:  "audit_log": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.audit_log"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 89 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 375 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.event"
+INFO:  "event": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.event"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 295 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.event_assignment"
+INFO:  "event_assignment": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.event_assignment"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 61 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 375 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.event_schedule"
+INFO:  "event_schedule": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.event_schedule"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 67 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 375 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.flyway_schema_history"
+INFO:  "flyway_schema_history": scanned 1 of 1 pages, containing 3 live rows and 0 dead rows; 3 rows in sample, 3 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.flyway_schema_history"
+avg read rate: 0.000 MB/s, avg write rate: 23.438 MB/s
+buffer usage: 213 hits, 0 reads, 3 dirtied
+WAL usage: 23 records, 3 full page images, 10931 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.participant"
+INFO:  "participant": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.participant"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 67 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 375 bytes, 0 buffers full
+system usage: CPU: user: 0.01 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.role"
+INFO:  "role": scanned 1 of 1 pages, containing 2 live rows and 0 dead rows; 2 rows in sample, 2 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.role"
+avg read rate: 0.000 MB/s, avg write rate: 23.438 MB/s
+buffer usage: 79 hits, 0 reads, 3 dirtied
+WAL usage: 10 records, 3 full page images, 16586 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.user_account"
+INFO:  "user_account": scanned 1 of 1 pages, containing 2 live rows and 0 dead rows; 2 rows in sample, 2 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.user_account"
+avg read rate: 0.000 MB/s, avg write rate: 3.906 MB/s
+buffer usage: 176 hits, 0 reads, 1 dirtied
+WAL usage: 25 records, 1 full page images, 8312 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.venue"
+INFO:  "venue": scanned 1 of 1 pages, containing 0 live rows and 1 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.venue"
+avg read rate: 0.000 MB/s, avg write rate: 7.812 MB/s
+buffer usage: 65 hits, 0 reads, 1 dirtied
+WAL usage: 4 records, 1 full page images, 1024 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "grp02_event_management_db.school_event_management_db.event"
+INFO:  finished vacuuming "grp02_event_management_db.school_event_management_db.event": index scans: 0
+pages: 0 removed, 0 remain, 0 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 0 remain, 0 are dead but not yet removable
+removable cutoff: 10540, which was 0 XIDs old when operation ended
+new relfrozenxid: 10540, which is 5 XIDs ahead of previous value
+frozen: 0 pages from table (100.00% of total) had 0 tuples frozen
+visibility map: 0 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (100.00% of total) had 0 dead item identifiers removed
+index "ex_event_venue_no_overlap": pages: 1 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 22 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 375 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  vacuuming "grp02_event_management_db.pg_toast.pg_toast_48054"
+INFO:  finished vacuuming "grp02_event_management_db.pg_toast.pg_toast_48054": index scans: 0
+pages: 0 removed, 0 remain, 0 scanned (100.00% of total), 0 eagerly scanned
+tuples: 0 removed, 0 remain, 0 are dead but not yet removable
+removable cutoff: 10540, which was 0 XIDs old when operation ended
+new relfrozenxid: 10540, which is 5 XIDs ahead of previous value
+frozen: 0 pages from table (100.00% of total) had 0 tuples frozen
+visibility map: 0 pages set all-visible, 0 pages set all-frozen (0 were all-visible)
+index scan not needed: 0 pages from table (100.00% of total) had 0 dead item identifiers removed
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 28 hits, 0 reads, 0 dirtied
+WAL usage: 1 records, 0 full page images, 258 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+INFO:  analyzing "school_event_management_db.event"
+INFO:  "event": scanned 0 of 0 pages, containing 0 live rows and 0 dead rows; 0 rows in sample, 0 estimated total rows
+INFO:  finished analyzing table "grp02_event_management_db.school_event_management_db.event"
+avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+buffer usage: 22 hits, 0 reads, 0 dirtied
+WAL usage: 0 records, 0 full page images, 0 bytes, 0 buffers full
+system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s

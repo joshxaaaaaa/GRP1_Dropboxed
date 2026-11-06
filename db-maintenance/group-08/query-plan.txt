@@ -1,0 +1,49 @@
+-- Pending reservations with customer and package, as staff review them
+-- Account: grp08_report
+SELECT r.reservation_id, r.event_date, r.status, c.first_name, c.last_name, p.package_name FROM reservation r JOIN customer c ON c.customer_id = r.customer_id JOIN package p ON p.package_id = r.package_id WHERE r.status = 'Pending' ORDER BY r.event_date;
+
+-- EXPLAIN
+SET
+                                   QUERY PLAN                                   
+--------------------------------------------------------------------------------
+ Sort  (cost=3.18..3.19 rows=1 width=40)
+   Sort Key: r.event_date
+   ->  Nested Loop  (cost=0.00..3.17 rows=1 width=40)
+         Join Filter: (p.package_id = r.package_id)
+         ->  Nested Loop  (cost=0.00..2.10 rows=1 width=32)
+               Join Filter: (c.customer_id = r.customer_id)
+               ->  Seq Scan on reservation r  (cost=0.00..1.04 rows=1 width=25)
+                     Filter: ((status)::text = 'Pending'::text)
+               ->  Seq Scan on customer c  (cost=0.00..1.03 rows=3 width=15)
+         ->  Seq Scan on package p  (cost=0.00..1.03 rows=3 width=16)
+(10 rows)
+
+-- EXPLAIN (ANALYZE, BUFFERS)
+SET
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=3.18..3.19 rows=1 width=40) (actual time=0.076..0.076 rows=1.00 loops=1)
+   Sort Key: r.event_date
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=6
+   ->  Nested Loop  (cost=0.00..3.17 rows=1 width=40) (actual time=0.064..0.065 rows=1.00 loops=1)
+         Join Filter: (p.package_id = r.package_id)
+         Rows Removed by Join Filter: 1
+         Buffers: shared hit=3
+         ->  Nested Loop  (cost=0.00..2.10 rows=1 width=32) (actual time=0.020..0.021 rows=1.00 loops=1)
+               Join Filter: (c.customer_id = r.customer_id)
+               Rows Removed by Join Filter: 1
+               Buffers: shared hit=2
+               ->  Seq Scan on reservation r  (cost=0.00..1.04 rows=1 width=25) (actual time=0.015..0.015 rows=1.00 loops=1)
+                     Filter: ((status)::text = 'Pending'::text)
+                     Rows Removed by Filter: 2
+                     Buffers: shared hit=1
+               ->  Seq Scan on customer c  (cost=0.00..1.03 rows=3 width=15) (actual time=0.003..0.003 rows=2.00 loops=1)
+                     Buffers: shared hit=1
+         ->  Seq Scan on package p  (cost=0.00..1.03 rows=3 width=16) (actual time=0.043..0.043 rows=2.00 loops=1)
+               Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=283
+ Planning Time: 3.698 ms
+ Execution Time: 0.110 ms
+(24 rows)
