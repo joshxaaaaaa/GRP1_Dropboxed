@@ -1,0 +1,23 @@
+-- Group 06: run against grp06_restore_test and car_rental_db, then compare.
+SET search_path TO "public";
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE' ORDER BY 1;
+SELECT 'audit_log' AS table_name, COUNT(*) FROM "audit_log";
+SELECT 'cancellation' AS table_name, COUNT(*) FROM "cancellation";
+SELECT 'customer' AS table_name, COUNT(*) FROM "customer";
+SELECT 'damage_fee' AS table_name, COUNT(*) FROM "damage_fee";
+SELECT 'damage_incident' AS table_name, COUNT(*) FROM "damage_incident";
+SELECT 'driver_license' AS table_name, COUNT(*) FROM "driver_license";
+SELECT 'inspection_item' AS table_name, COUNT(*) FROM "inspection_item";
+SELECT 'inspection_photo' AS table_name, COUNT(*) FROM "inspection_photo";
+SELECT 'payment' AS table_name, COUNT(*) FROM "payment";
+SELECT 'rental' AS table_name, COUNT(*) FROM "rental";
+SELECT 'rental_rate' AS table_name, COUNT(*) FROM "rental_rate";
+SELECT 'rental_terms' AS table_name, COUNT(*) FROM "rental_terms";
+SELECT 'staff' AS table_name, COUNT(*) FROM "staff";
+SELECT 'vehicle' AS table_name, COUNT(*) FROM "vehicle";
+SELECT 'vehicle_category' AS table_name, COUNT(*) FROM "vehicle_category";
+SELECT 'vehicle_inspection' AS table_name, COUNT(*) FROM "vehicle_inspection";
+SELECT 'vehicle_maintenance' AS table_name, COUNT(*) FROM "vehicle_maintenance";
+SELECT contype, COUNT(*) FROM pg_constraint WHERE connamespace = 'public'::regnamespace GROUP BY 1 ORDER BY 1;
+SELECT COUNT(*) AS indexes FROM pg_indexes WHERE schemaname = 'public';
+SELECT v.vehicle_id, v.make, v.model, v.year, c.category_name FROM vehicle v JOIN vehicle_category c ON c.category_id = v.category_id WHERE v.status = 'Available' ORDER BY c.category_name, v.make;

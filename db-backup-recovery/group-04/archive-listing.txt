@@ -1,0 +1,159 @@
+;
+; Archive created at 2026-11-06 20:05:02
+;     dbname: grp03_projectdb
+;     TOC Entries: 149
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+5210; 0 0 ACL - SCHEMA public pg_database_owner
+2; 3079 50016 EXTENSION - pgcrypto 
+5211; 0 0 COMMENT - EXTENSION pgcrypto 
+227; 1259 50099 TABLE public appointments postgres
+5212; 0 0 ACL public TABLE appointments postgres
+223; 1259 50066 TABLE public doctors postgres
+5213; 0 0 ACL public TABLE doctors postgres
+5214; 0 0 ACL public COLUMN doctors.doctor_id postgres
+5215; 0 0 ACL public COLUMN doctors.first_name postgres
+5216; 0 0 ACL public COLUMN doctors.last_name postgres
+5217; 0 0 ACL public COLUMN doctors.specialty_id postgres
+225; 1259 50085 TABLE public patients postgres
+5218; 0 0 ACL public TABLE patients postgres
+5219; 0 0 ACL public COLUMN patients.patient_id postgres
+5220; 0 0 ACL public COLUMN patients.first_name postgres
+5221; 0 0 ACL public COLUMN patients.last_name postgres
+5222; 0 0 ACL public COLUMN patients.date_of_birth postgres
+5223; 0 0 ACL public COLUMN patients.gender postgres
+221; 1259 50055 TABLE public specialties postgres
+5224; 0 0 ACL public TABLE specialties postgres
+242; 1259 50285 VIEW public appointment_details postgres
+5225; 0 0 ACL public TABLE appointment_details postgres
+226; 1259 50098 SEQUENCE public appointments_appointment_id_seq postgres
+5226; 0 0 SEQUENCE OWNED BY public appointments_appointment_id_seq postgres
+5227; 0 0 ACL public SEQUENCE appointments_appointment_id_seq postgres
+241; 1259 50262 TABLE public billing postgres
+5228; 0 0 ACL public TABLE billing postgres
+240; 1259 50261 SEQUENCE public billing_bill_id_seq postgres
+5229; 0 0 SEQUENCE OWNED BY public billing_bill_id_seq postgres
+5230; 0 0 ACL public SEQUENCE billing_bill_id_seq postgres
+239; 1259 50236 TABLE public deleted_records postgres
+5231; 0 0 ACL public TABLE deleted_records postgres
+238; 1259 50235 SEQUENCE public deleted_records_record_id_seq postgres
+5232; 0 0 SEQUENCE OWNED BY public deleted_records_record_id_seq postgres
+5233; 0 0 ACL public SEQUENCE deleted_records_record_id_seq postgres
+222; 1259 50065 SEQUENCE public doctors_doctor_id_seq postgres
+5234; 0 0 SEQUENCE OWNED BY public doctors_doctor_id_seq postgres
+5235; 0 0 ACL public SEQUENCE doctors_doctor_id_seq postgres
+229; 1259 50122 TABLE public medical_notes postgres
+5236; 0 0 ACL public TABLE medical_notes postgres
+228; 1259 50121 SEQUENCE public medical_notes_note_id_seq postgres
+5237; 0 0 SEQUENCE OWNED BY public medical_notes_note_id_seq postgres
+5238; 0 0 ACL public SEQUENCE medical_notes_note_id_seq postgres
+237; 1259 50211 TABLE public patient_password_resets postgres
+5239; 0 0 ACL public TABLE patient_password_resets postgres
+236; 1259 50210 SEQUENCE public patient_password_resets_reset_id_seq postgres
+5240; 0 0 SEQUENCE OWNED BY public patient_password_resets_reset_id_seq postgres
+5241; 0 0 ACL public SEQUENCE patient_password_resets_reset_id_seq postgres
+224; 1259 50084 SEQUENCE public patients_patient_id_seq postgres
+5242; 0 0 SEQUENCE OWNED BY public patients_patient_id_seq postgres
+5243; 0 0 ACL public SEQUENCE patients_patient_id_seq postgres
+231; 1259 50140 TABLE public prescriptions postgres
+5244; 0 0 ACL public TABLE prescriptions postgres
+230; 1259 50139 SEQUENCE public prescriptions_prescription_id_seq postgres
+5245; 0 0 SEQUENCE OWNED BY public prescriptions_prescription_id_seq postgres
+5246; 0 0 ACL public SEQUENCE prescriptions_prescription_id_seq postgres
+220; 1259 50054 SEQUENCE public specialties_specialty_id_seq postgres
+5247; 0 0 SEQUENCE OWNED BY public specialties_specialty_id_seq postgres
+5248; 0 0 ACL public SEQUENCE specialties_specialty_id_seq postgres
+235; 1259 50186 TABLE public staff_password_resets postgres
+5249; 0 0 ACL public TABLE staff_password_resets postgres
+234; 1259 50185 SEQUENCE public staff_password_resets_reset_id_seq postgres
+5250; 0 0 SEQUENCE OWNED BY public staff_password_resets_reset_id_seq postgres
+5251; 0 0 ACL public SEQUENCE staff_password_resets_reset_id_seq postgres
+233; 1259 50159 TABLE public staff_users postgres
+5252; 0 0 ACL public TABLE staff_users postgres
+5253; 0 0 ACL public COLUMN staff_users.user_id postgres
+5254; 0 0 ACL public COLUMN staff_users.first_name postgres
+5255; 0 0 ACL public COLUMN staff_users.last_name postgres
+5256; 0 0 ACL public COLUMN staff_users.role postgres
+5257; 0 0 ACL public COLUMN staff_users.doctor_id postgres
+5258; 0 0 ACL public COLUMN staff_users.is_active postgres
+5259; 0 0 ACL public COLUMN staff_users.created_at postgres
+232; 1259 50158 SEQUENCE public staff_users_user_id_seq postgres
+5260; 0 0 SEQUENCE OWNED BY public staff_users_user_id_seq postgres
+5261; 0 0 ACL public SEQUENCE staff_users_user_id_seq postgres
+243; 1259 50290 VIEW public visit_records postgres
+5262; 0 0 ACL public TABLE visit_records postgres
+4957; 2604 50102 DEFAULT public appointments appointment_id postgres
+4975; 2604 50265 DEFAULT public billing bill_id postgres
+4973; 2604 50239 DEFAULT public deleted_records record_id postgres
+4955; 2604 50069 DEFAULT public doctors doctor_id postgres
+4959; 2604 50125 DEFAULT public medical_notes note_id postgres
+4969; 2604 50214 DEFAULT public patient_password_resets reset_id postgres
+4956; 2604 50088 DEFAULT public patients patient_id postgres
+4961; 2604 50143 DEFAULT public prescriptions prescription_id postgres
+4954; 2604 50058 DEFAULT public specialties specialty_id postgres
+4965; 2604 50189 DEFAULT public staff_password_resets reset_id postgres
+4962; 2604 50162 DEFAULT public staff_users user_id postgres
+5188; 0 50099 TABLE DATA public appointments postgres
+5202; 0 50262 TABLE DATA public billing postgres
+5200; 0 50236 TABLE DATA public deleted_records postgres
+5184; 0 50066 TABLE DATA public doctors postgres
+5190; 0 50122 TABLE DATA public medical_notes postgres
+5198; 0 50211 TABLE DATA public patient_password_resets postgres
+5186; 0 50085 TABLE DATA public patients postgres
+5192; 0 50140 TABLE DATA public prescriptions postgres
+5182; 0 50055 TABLE DATA public specialties postgres
+5196; 0 50186 TABLE DATA public staff_password_resets postgres
+5194; 0 50159 TABLE DATA public staff_users postgres
+5263; 0 0 SEQUENCE SET public appointments_appointment_id_seq postgres
+5264; 0 0 SEQUENCE SET public billing_bill_id_seq postgres
+5265; 0 0 SEQUENCE SET public deleted_records_record_id_seq postgres
+5266; 0 0 SEQUENCE SET public doctors_doctor_id_seq postgres
+5267; 0 0 SEQUENCE SET public medical_notes_note_id_seq postgres
+5268; 0 0 SEQUENCE SET public patient_password_resets_reset_id_seq postgres
+5269; 0 0 SEQUENCE SET public patients_patient_id_seq postgres
+5270; 0 0 SEQUENCE SET public prescriptions_prescription_id_seq postgres
+5271; 0 0 SEQUENCE SET public specialties_specialty_id_seq postgres
+5272; 0 0 SEQUENCE SET public staff_password_resets_reset_id_seq postgres
+5273; 0 0 SEQUENCE SET public staff_users_user_id_seq postgres
+4999; 2606 50109 CONSTRAINT public appointments appointments_pkey postgres
+5020; 2606 50279 CONSTRAINT public billing billing_appointment_id_key postgres
+5022; 2606 50277 CONSTRAINT public billing billing_pkey postgres
+5018; 2606 50251 CONSTRAINT public deleted_records deleted_records_pkey postgres
+4991; 2606 50078 CONSTRAINT public doctors doctors_email_key postgres
+4993; 2606 50076 CONSTRAINT public doctors doctors_pkey postgres
+5001; 2606 50133 CONSTRAINT public medical_notes medical_notes_pkey postgres
+5003; 2606 50260 CONSTRAINT public medical_notes one_note_per_visit postgres
+5016; 2606 50228 CONSTRAINT public patient_password_resets patient_password_resets_pkey postgres
+4996; 2606 50096 CONSTRAINT public patients patients_pkey postgres
+5005; 2606 50152 CONSTRAINT public prescriptions prescriptions_pkey postgres
+4987; 2606 50062 CONSTRAINT public specialties specialties_pkey postgres
+4989; 2606 50064 CONSTRAINT public specialties specialties_specialty_name_key postgres
+5012; 2606 50203 CONSTRAINT public staff_password_resets staff_password_resets_pkey postgres
+5010; 2606 50176 CONSTRAINT public staff_users staff_users_pkey postgres
+4997; 1259 50120 INDEX public appointments_doctor_slot postgres
+5014; 1259 50234 INDEX public patient_password_resets_idx postgres
+4994; 1259 50097 INDEX public patients_email_unique postgres
+5013; 1259 50209 INDEX public staff_password_resets_user_idx postgres
+5006; 1259 50184 INDEX public staff_users_doctor_unique postgres
+5007; 1259 50182 INDEX public staff_users_email_unique postgres
+5008; 1259 50183 INDEX public staff_users_phone_unique postgres
+5024; 2606 50115 FK CONSTRAINT public appointments appointments_doctor_id_fkey postgres
+5025; 2606 50110 FK CONSTRAINT public appointments appointments_patient_id_fkey postgres
+5031; 2606 50280 FK CONSTRAINT public billing billing_appointment_id_fkey postgres
+5023; 2606 50079 FK CONSTRAINT public doctors doctors_specialty_id_fkey postgres
+5026; 2606 50134 FK CONSTRAINT public medical_notes medical_notes_appointment_id_fkey postgres
+5030; 2606 50229 FK CONSTRAINT public patient_password_resets patient_password_resets_patient_id_fkey postgres
+5027; 2606 50153 FK CONSTRAINT public prescriptions prescriptions_appointment_id_fkey postgres
+5029; 2606 50204 FK CONSTRAINT public staff_password_resets staff_password_resets_user_id_fkey postgres
+5028; 2606 50177 FK CONSTRAINT public staff_users staff_users_doctor_id_fkey postgres
+2149; 826 51956 DEFAULT ACL public DEFAULT PRIVILEGES FOR SEQUENCES postgres
+2148; 826 50256 DEFAULT ACL public DEFAULT PRIVILEGES FOR TABLES postgres

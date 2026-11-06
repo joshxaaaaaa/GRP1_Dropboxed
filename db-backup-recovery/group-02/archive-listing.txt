@@ -1,0 +1,119 @@
+;
+; Archive created at 2026-11-06 11:35:56
+;     dbname: grp02_event_management_db
+;     TOC Entries: 109
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+6; 2615 47251 SCHEMA - school_event_management_db event_owner
+5427; 0 0 ACL - SCHEMA school_event_management_db event_owner
+2; 3079 47252 EXTENSION - btree_gist 
+5428; 0 0 COMMENT - EXTENSION btree_gist 
+237; 1259 48117 TABLE school_event_management_db attendance event_owner
+5429; 0 0 ACL school_event_management_db TABLE attendance event_owner
+236; 1259 48116 SEQUENCE school_event_management_db attendance_attendance_id_seq event_owner
+5430; 0 0 ACL school_event_management_db SEQUENCE attendance_attendance_id_seq event_owner
+239; 1259 48142 TABLE school_event_management_db audit_log event_owner
+5431; 0 0 ACL school_event_management_db TABLE audit_log event_owner
+238; 1259 48141 SEQUENCE school_event_management_db audit_log_log_id_seq event_owner
+5432; 0 0 ACL school_event_management_db SEQUENCE audit_log_log_id_seq event_owner
+231; 1259 48054 TABLE school_event_management_db event event_owner
+5433; 0 0 ACL school_event_management_db TABLE event event_owner
+235; 1259 48101 TABLE school_event_management_db event_assignment event_owner
+5434; 0 0 ACL school_event_management_db TABLE event_assignment event_owner
+234; 1259 48100 SEQUENCE school_event_management_db event_assignment_assignment_id_seq event_owner
+5435; 0 0 ACL school_event_management_db SEQUENCE event_assignment_assignment_id_seq event_owner
+230; 1259 48053 SEQUENCE school_event_management_db event_event_id_seq event_owner
+5436; 0 0 ACL school_event_management_db SEQUENCE event_event_id_seq event_owner
+233; 1259 48084 TABLE school_event_management_db event_schedule event_owner
+5437; 0 0 ACL school_event_management_db TABLE event_schedule event_owner
+232; 1259 48083 SEQUENCE school_event_management_db event_schedule_schedule_id_seq event_owner
+5438; 0 0 ACL school_event_management_db SEQUENCE event_schedule_schedule_id_seq event_owner
+221; 1259 47978 TABLE school_event_management_db flyway_schema_history event_owner
+5439; 0 0 ACL school_event_management_db TABLE flyway_schema_history event_owner
+227; 1259 48018 TABLE school_event_management_db participant event_owner
+5440; 0 0 ACL school_event_management_db TABLE participant event_owner
+226; 1259 48017 SEQUENCE school_event_management_db participant_participant_id_seq event_owner
+5441; 0 0 ACL school_event_management_db SEQUENCE participant_participant_id_seq event_owner
+223; 1259 47996 TABLE school_event_management_db role event_owner
+5442; 0 0 ACL school_event_management_db TABLE role event_owner
+222; 1259 47995 SEQUENCE school_event_management_db role_role_id_seq event_owner
+5443; 0 0 ACL school_event_management_db SEQUENCE role_role_id_seq event_owner
+229; 1259 48030 TABLE school_event_management_db user_account event_owner
+5444; 0 0 ACL school_event_management_db TABLE user_account event_owner
+5445; 0 0 ACL school_event_management_db COLUMN user_account.user_id event_owner
+5446; 0 0 ACL school_event_management_db COLUMN user_account.username event_owner
+5447; 0 0 ACL school_event_management_db COLUMN user_account.first_name event_owner
+5448; 0 0 ACL school_event_management_db COLUMN user_account.last_name event_owner
+5449; 0 0 ACL school_event_management_db COLUMN user_account.role_id event_owner
+5450; 0 0 ACL school_event_management_db COLUMN user_account.account_status event_owner
+228; 1259 48029 SEQUENCE school_event_management_db user_account_user_id_seq event_owner
+5451; 0 0 ACL school_event_management_db SEQUENCE user_account_user_id_seq event_owner
+225; 1259 48006 TABLE school_event_management_db venue event_owner
+5452; 0 0 ACL school_event_management_db TABLE venue event_owner
+224; 1259 48005 SEQUENCE school_event_management_db venue_venue_id_seq event_owner
+5453; 0 0 ACL school_event_management_db SEQUENCE venue_venue_id_seq event_owner
+5417; 0 48117 TABLE DATA school_event_management_db attendance event_owner
+5419; 0 48142 TABLE DATA school_event_management_db audit_log event_owner
+5411; 0 48054 TABLE DATA school_event_management_db event event_owner
+5415; 0 48101 TABLE DATA school_event_management_db event_assignment event_owner
+5413; 0 48084 TABLE DATA school_event_management_db event_schedule event_owner
+5401; 0 47978 TABLE DATA school_event_management_db flyway_schema_history event_owner
+5407; 0 48018 TABLE DATA school_event_management_db participant event_owner
+5403; 0 47996 TABLE DATA school_event_management_db role event_owner
+5409; 0 48030 TABLE DATA school_event_management_db user_account event_owner
+5405; 0 48006 TABLE DATA school_event_management_db venue event_owner
+5454; 0 0 SEQUENCE SET school_event_management_db attendance_attendance_id_seq event_owner
+5455; 0 0 SEQUENCE SET school_event_management_db audit_log_log_id_seq event_owner
+5456; 0 0 SEQUENCE SET school_event_management_db event_assignment_assignment_id_seq event_owner
+5457; 0 0 SEQUENCE SET school_event_management_db event_event_id_seq event_owner
+5458; 0 0 SEQUENCE SET school_event_management_db event_schedule_schedule_id_seq event_owner
+5459; 0 0 SEQUENCE SET school_event_management_db participant_participant_id_seq event_owner
+5460; 0 0 SEQUENCE SET school_event_management_db role_role_id_seq event_owner
+5461; 0 0 SEQUENCE SET school_event_management_db user_account_user_id_seq event_owner
+5462; 0 0 SEQUENCE SET school_event_management_db venue_venue_id_seq event_owner
+5238; 2606 48128 CONSTRAINT school_event_management_db attendance attendance_pkey event_owner
+5243; 2606 48154 CONSTRAINT school_event_management_db audit_log audit_log_pkey event_owner
+5235; 2606 48110 CONSTRAINT school_event_management_db event_assignment event_assignment_pkey event_owner
+5225; 2606 48070 CONSTRAINT school_event_management_db event event_pkey event_owner
+5232; 2606 48094 CONSTRAINT school_event_management_db event_schedule event_schedule_pkey event_owner
+5227; 2606 48072 CONSTRAINT school_event_management_db event ex_event_venue_no_overlap event_owner
+5205; 2606 47993 CONSTRAINT school_event_management_db flyway_schema_history flyway_schema_history_pk event_owner
+5216; 2606 48026 CONSTRAINT school_event_management_db participant participant_pkey event_owner
+5208; 2606 48002 CONSTRAINT school_event_management_db role role_pkey event_owner
+5241; 2606 48130 CONSTRAINT school_event_management_db attendance uq_attendance_event_participant event_owner
+5218; 2606 48028 CONSTRAINT school_event_management_db participant uq_participant_student_number event_owner
+5210; 2606 48004 CONSTRAINT school_event_management_db role uq_role_name event_owner
+5212; 2606 48016 CONSTRAINT school_event_management_db venue uq_venue_name event_owner
+5223; 2606 48045 CONSTRAINT school_event_management_db user_account user_account_pkey event_owner
+5214; 2606 48014 CONSTRAINT school_event_management_db venue venue_pkey event_owner
+5206; 1259 47994 INDEX school_event_management_db flyway_schema_history_s_idx event_owner
+5239; 1259 48166 INDEX school_event_management_db ix_attendance_participant_id event_owner
+5244; 1259 48168 INDEX school_event_management_db ix_audit_log_timestamp event_owner
+5245; 1259 48167 INDEX school_event_management_db ix_audit_log_user_id event_owner
+5236; 1259 48165 INDEX school_event_management_db ix_event_assignment_event_id event_owner
+5228; 1259 48163 INDEX school_event_management_db ix_event_event_date event_owner
+5229; 1259 48161 INDEX school_event_management_db ix_event_organizer_id event_owner
+5233; 1259 48164 INDEX school_event_management_db ix_event_schedule_event_id event_owner
+5230; 1259 48162 INDEX school_event_management_db ix_event_venue_id event_owner
+5219; 1259 48160 INDEX school_event_management_db ix_user_account_role_id event_owner
+5220; 1259 48052 INDEX school_event_management_db uq_user_account_email_lower event_owner
+5221; 1259 48051 INDEX school_event_management_db uq_user_account_username_lower event_owner
+5251; 2606 48131 FK CONSTRAINT school_event_management_db attendance attendance_event_id_fkey event_owner
+5252; 2606 48136 FK CONSTRAINT school_event_management_db attendance attendance_participant_id_fkey event_owner
+5253; 2606 48155 FK CONSTRAINT school_event_management_db audit_log audit_log_user_id_fkey event_owner
+5250; 2606 48111 FK CONSTRAINT school_event_management_db event_assignment event_assignment_event_id_fkey event_owner
+5247; 2606 48073 FK CONSTRAINT school_event_management_db event event_organizer_id_fkey event_owner
+5249; 2606 48095 FK CONSTRAINT school_event_management_db event_schedule event_schedule_event_id_fkey event_owner
+5248; 2606 48078 FK CONSTRAINT school_event_management_db event event_venue_id_fkey event_owner
+5246; 2606 48046 FK CONSTRAINT school_event_management_db user_account user_account_role_id_fkey event_owner
+2387; 826 48170 DEFAULT ACL school_event_management_db DEFAULT PRIVILEGES FOR SEQUENCES event_owner
+2386; 826 48169 DEFAULT ACL school_event_management_db DEFAULT PRIVILEGES FOR TABLES event_owner

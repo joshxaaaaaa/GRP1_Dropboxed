@@ -1,0 +1,24 @@
+-- Group 05: run against grp05_restore_test and grp10_shioricafedb, then compare.
+SET search_path TO "shioricafe_schema";
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'shioricafe_schema' AND table_type = 'BASE TABLE' ORDER BY 1;
+SELECT 'category' AS table_name, COUNT(*) FROM "category";
+SELECT 'customer' AS table_name, COUNT(*) FROM "customer";
+SELECT 'inquiry' AS table_name, COUNT(*) FROM "inquiry";
+SELECT 'menu_item' AS table_name, COUNT(*) FROM "menu_item";
+SELECT 'order' AS table_name, COUNT(*) FROM "order";
+SELECT 'order_discount' AS table_name, COUNT(*) FROM "order_discount";
+SELECT 'order_discount_allocation' AS table_name, COUNT(*) FROM "order_discount_allocation";
+SELECT 'order_item' AS table_name, COUNT(*) FROM "order_item";
+SELECT 'payment_attempt' AS table_name, COUNT(*) FROM "payment_attempt";
+SELECT 'payment_refund' AS table_name, COUNT(*) FROM "payment_refund";
+SELECT 'payment_refund_item_allocation' AS table_name, COUNT(*) FROM "payment_refund_item_allocation";
+SELECT 'payment_reversal' AS table_name, COUNT(*) FROM "payment_reversal";
+SELECT 'payment_transaction' AS table_name, COUNT(*) FROM "payment_transaction";
+SELECT 'provider_event' AS table_name, COUNT(*) FROM "provider_event";
+SELECT 'reservation' AS table_name, COUNT(*) FROM "reservation";
+SELECT 'staff' AS table_name, COUNT(*) FROM "staff";
+SELECT 'store_credit_ledger' AS table_name, COUNT(*) FROM "store_credit_ledger";
+SELECT 'table' AS table_name, COUNT(*) FROM "table";
+SELECT contype, COUNT(*) FROM pg_constraint WHERE connamespace = 'shioricafe_schema'::regnamespace GROUP BY 1 ORDER BY 1;
+SELECT COUNT(*) AS indexes FROM pg_indexes WHERE schemaname = 'shioricafe_schema';
+SELECT c.category_name, m.item_name, m.current_price FROM menu_item m JOIN category c ON c.category_id = m.category_id WHERE m.is_active ORDER BY c.category_name, m.item_name;

@@ -1,0 +1,125 @@
+;
+; Archive created at 2026-11-06 10:58:55
+;     dbname: grp07_applicantdb
+;     TOC Entries: 115
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+5; 2615 18099 SCHEMA - public postgres
+5143; 0 0 COMMENT - SCHEMA public postgres
+5144; 0 0 ACL - SCHEMA public postgres
+224; 1259 18139 TABLE public applicant postgres
+5145; 0 0 ACL public TABLE applicant postgres
+5146; 0 0 ACL public COLUMN applicant.applicant_id postgres
+5147; 0 0 ACL public COLUMN applicant.first_name postgres
+5148; 0 0 ACL public COLUMN applicant.last_name postgres
+5149; 0 0 ACL public COLUMN applicant.date_of_birth postgres
+5150; 0 0 ACL public COLUMN applicant.created_at postgres
+223; 1259 18138 SEQUENCE public applicant_applicant_id_seq postgres
+5151; 0 0 SEQUENCE OWNED BY public applicant_applicant_id_seq postgres
+5152; 0 0 ACL public SEQUENCE applicant_applicant_id_seq postgres
+233; 1259 18241 TABLE public applicant_requirement postgres
+5153; 0 0 ACL public TABLE applicant_requirement postgres
+228; 1259 18174 TABLE public application postgres
+5154; 0 0 ACL public TABLE application postgres
+227; 1259 18173 SEQUENCE public application_application_id_seq postgres
+5155; 0 0 SEQUENCE OWNED BY public application_application_id_seq postgres
+5156; 0 0 ACL public SEQUENCE application_application_id_seq postgres
+226; 1259 18160 TABLE public application_status postgres
+5157; 0 0 ACL public TABLE application_status postgres
+225; 1259 18159 SEQUENCE public application_status_status_id_seq postgres
+5158; 0 0 SEQUENCE OWNED BY public application_status_status_id_seq postgres
+5159; 0 0 ACL public SEQUENCE application_status_status_id_seq postgres
+220; 1259 18101 TABLE public department postgres
+5160; 0 0 ACL public TABLE department postgres
+219; 1259 18100 SEQUENCE public department_department_id_seq postgres
+5161; 0 0 SEQUENCE OWNED BY public department_department_id_seq postgres
+5162; 0 0 ACL public SEQUENCE department_department_id_seq postgres
+230; 1259 18204 TABLE public interview postgres
+5163; 0 0 ACL public TABLE interview postgres
+229; 1259 18203 SEQUENCE public interview_interview_id_seq postgres
+5164; 0 0 SEQUENCE OWNED BY public interview_interview_id_seq postgres
+5165; 0 0 ACL public SEQUENCE interview_interview_id_seq postgres
+222; 1259 18115 TABLE public position postgres
+5166; 0 0 ACL public TABLE "position" postgres
+221; 1259 18114 SEQUENCE public position_position_id_seq postgres
+5167; 0 0 SEQUENCE OWNED BY public position_position_id_seq postgres
+5168; 0 0 ACL public SEQUENCE position_position_id_seq postgres
+232; 1259 18226 TABLE public requirement postgres
+5169; 0 0 ACL public TABLE requirement postgres
+231; 1259 18225 SEQUENCE public requirement_requirement_id_seq postgres
+5170; 0 0 SEQUENCE OWNED BY public requirement_requirement_id_seq postgres
+5171; 0 0 ACL public SEQUENCE requirement_requirement_id_seq postgres
+235; 1259 18272 TABLE public users postgres
+5172; 0 0 ACL public TABLE users postgres
+5173; 0 0 ACL public COLUMN users.user_id postgres
+5174; 0 0 ACL public COLUMN users.username postgres
+5175; 0 0 ACL public COLUMN users.role postgres
+5176; 0 0 ACL public COLUMN users.created_at postgres
+234; 1259 18271 SEQUENCE public users_user_id_seq postgres
+5177; 0 0 SEQUENCE OWNED BY public users_user_id_seq postgres
+5178; 0 0 ACL public SEQUENCE users_user_id_seq postgres
+4901; 2604 18142 DEFAULT public applicant applicant_id postgres
+4904; 2604 18177 DEFAULT public application application_id postgres
+4903; 2604 18163 DEFAULT public application_status status_id postgres
+4897; 2604 18104 DEFAULT public department department_id postgres
+4906; 2604 18207 DEFAULT public interview interview_id postgres
+4898; 2604 18118 DEFAULT public position position_id postgres
+4909; 2604 18229 DEFAULT public requirement requirement_id postgres
+4912; 2604 18275 DEFAULT public users user_id postgres
+5124; 0 18139 TABLE DATA public applicant postgres
+5133; 0 18241 TABLE DATA public applicant_requirement postgres
+5128; 0 18174 TABLE DATA public application postgres
+5126; 0 18160 TABLE DATA public application_status postgres
+5120; 0 18101 TABLE DATA public department postgres
+5130; 0 18204 TABLE DATA public interview postgres
+5122; 0 18115 TABLE DATA public position postgres
+5132; 0 18226 TABLE DATA public requirement postgres
+5135; 0 18272 TABLE DATA public users postgres
+5179; 0 0 SEQUENCE SET public applicant_applicant_id_seq postgres
+5180; 0 0 SEQUENCE SET public application_application_id_seq postgres
+5181; 0 0 SEQUENCE SET public application_status_status_id_seq postgres
+5182; 0 0 SEQUENCE SET public department_department_id_seq postgres
+5183; 0 0 SEQUENCE SET public interview_interview_id_seq postgres
+5184; 0 0 SEQUENCE SET public position_position_id_seq postgres
+5185; 0 0 SEQUENCE SET public requirement_requirement_id_seq postgres
+5186; 0 0 SEQUENCE SET public users_user_id_seq postgres
+4936; 2606 18156 CONSTRAINT public applicant applicant_pkey postgres
+4945; 2606 18185 CONSTRAINT public application application_pkey postgres
+4941; 2606 18170 CONSTRAINT public application_status application_status_pkey postgres
+4929; 2606 18111 CONSTRAINT public department department_pkey postgres
+4953; 2606 18219 CONSTRAINT public interview interview_pkey postgres
+4960; 2606 18253 CONSTRAINT public applicant_requirement pk_applicant_requirement postgres
+4934; 2606 18132 CONSTRAINT public position position_pkey postgres
+4955; 2606 18238 CONSTRAINT public requirement requirement_pkey postgres
+4939; 2606 18158 CONSTRAINT public applicant uq_applicant_email postgres
+4949; 2606 18187 CONSTRAINT public application uq_application_applicant_position postgres
+4943; 2606 18172 CONSTRAINT public application_status uq_application_status_name postgres
+4931; 2606 18113 CONSTRAINT public department uq_department_name postgres
+4957; 2606 18240 CONSTRAINT public requirement uq_requirement_name postgres
+4962; 2606 18283 CONSTRAINT public users users_pkey postgres
+4964; 2606 18285 CONSTRAINT public users users_username_key postgres
+4937; 1259 18270 INDEX public idx_applicant_last_name postgres
+4946; 1259 18265 INDEX public idx_application_position postgres
+4947; 1259 18266 INDEX public idx_application_status postgres
+4958; 1259 18269 INDEX public idx_appreq_requirement postgres
+4950; 1259 18267 INDEX public idx_interview_application postgres
+4951; 1259 18268 INDEX public idx_interview_date postgres
+4932; 1259 18264 INDEX public idx_position_department postgres
+4966; 2606 18188 FK CONSTRAINT public application fk_application_applicant postgres
+4967; 2606 18193 FK CONSTRAINT public application fk_application_position postgres
+4968; 2606 18198 FK CONSTRAINT public application fk_application_status postgres
+4970; 2606 18254 FK CONSTRAINT public applicant_requirement fk_appreq_applicant postgres
+4971; 2606 18259 FK CONSTRAINT public applicant_requirement fk_appreq_requirement postgres
+4969; 2606 18220 FK CONSTRAINT public interview fk_interview_application postgres
+4965; 2606 18133 FK CONSTRAINT public position fk_position_department postgres
+2092; 826 26451 DEFAULT ACL public DEFAULT PRIVILEGES FOR SEQUENCES postgres
+2091; 826 26450 DEFAULT ACL public DEFAULT PRIVILEGES FOR TABLES postgres

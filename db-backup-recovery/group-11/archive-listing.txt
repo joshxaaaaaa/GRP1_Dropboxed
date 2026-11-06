@@ -1,0 +1,128 @@
+;
+; Archive created at 2026-11-06 10:59:09
+;     dbname: ReserveIT
+;     TOC Entries: 118
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+5424; 0 0 ACL - SCHEMA public pg_database_owner
+2; 3079 19647 EXTENSION - btree_gist 
+5425; 0 0 COMMENT - EXTENSION btree_gist 
+223; 1259 20385 TABLE public app_user reserveit_owner
+5426; 0 0 ACL public TABLE app_user reserveit_owner
+5427; 0 0 ACL public COLUMN app_user.user_id reserveit_owner
+5428; 0 0 ACL public COLUMN app_user.first_name reserveit_owner
+5429; 0 0 ACL public COLUMN app_user.last_name reserveit_owner
+5430; 0 0 ACL public COLUMN app_user.role reserveit_owner
+5431; 0 0 ACL public COLUMN app_user.department_id reserveit_owner
+5432; 0 0 ACL public COLUMN app_user.status reserveit_owner
+222; 1259 20384 SEQUENCE public app_user_user_id_seq reserveit_owner
+5433; 0 0 SEQUENCE OWNED BY public app_user_user_id_seq reserveit_owner
+5434; 0 0 ACL public SEQUENCE app_user_user_id_seq reserveit_owner
+221; 1259 20374 TABLE public department reserveit_owner
+5435; 0 0 ACL public TABLE department reserveit_owner
+220; 1259 20373 SEQUENCE public department_department_id_seq reserveit_owner
+5436; 0 0 SEQUENCE OWNED BY public department_department_id_seq reserveit_owner
+5437; 0 0 ACL public SEQUENCE department_department_id_seq reserveit_owner
+229; 1259 20449 TABLE public material reserveit_owner
+5438; 0 0 ACL public TABLE material reserveit_owner
+5439; 0 0 ACL public COLUMN material.material_name reserveit_owner
+5440; 0 0 ACL public COLUMN material.category reserveit_owner
+5441; 0 0 ACL public COLUMN material.total_quantity reserveit_owner
+5442; 0 0 ACL public COLUMN material.available_quantity reserveit_owner
+228; 1259 20448 SEQUENCE public material_material_id_seq reserveit_owner
+5443; 0 0 SEQUENCE OWNED BY public material_material_id_seq reserveit_owner
+5444; 0 0 ACL public SEQUENCE material_material_id_seq reserveit_owner
+234; 1259 20521 TABLE public penalty reserveit_owner
+5445; 0 0 ACL public TABLE penalty reserveit_owner
+5446; 0 0 ACL public COLUMN penalty.paid_status reserveit_owner
+5447; 0 0 ACL public COLUMN penalty.paid_date reserveit_owner
+233; 1259 20520 SEQUENCE public penalty_penalty_id_seq reserveit_owner
+5448; 0 0 SEQUENCE OWNED BY public penalty_penalty_id_seq reserveit_owner
+5449; 0 0 ACL public SEQUENCE penalty_penalty_id_seq reserveit_owner
+231; 1259 20466 TABLE public reservation reserveit_owner
+5450; 0 0 ACL public TABLE reservation reserveit_owner
+5451; 0 0 ACL public COLUMN reservation.staff_id reserveit_owner
+5452; 0 0 ACL public COLUMN reservation.status reserveit_owner
+232; 1259 20501 TABLE public reservation_material reserveit_owner
+5453; 0 0 ACL public TABLE reservation_material reserveit_owner
+230; 1259 20465 SEQUENCE public reservation_reservation_id_seq reserveit_owner
+5454; 0 0 SEQUENCE OWNED BY public reservation_reservation_id_seq reserveit_owner
+5455; 0 0 ACL public SEQUENCE reservation_reservation_id_seq reserveit_owner
+227; 1259 20430 TABLE public room reserveit_owner
+5456; 0 0 ACL public TABLE room reserveit_owner
+5457; 0 0 ACL public COLUMN room.room_name reserveit_owner
+5458; 0 0 ACL public COLUMN room.building reserveit_owner
+5459; 0 0 ACL public COLUMN room.capacity reserveit_owner
+5460; 0 0 ACL public COLUMN room.room_type reserveit_owner
+5461; 0 0 ACL public COLUMN room.status reserveit_owner
+226; 1259 20429 SEQUENCE public room_room_id_seq reserveit_owner
+5462; 0 0 SEQUENCE OWNED BY public room_room_id_seq reserveit_owner
+5463; 0 0 ACL public SEQUENCE room_room_id_seq reserveit_owner
+225; 1259 20411 TABLE public staff reserveit_owner
+5464; 0 0 ACL public TABLE staff reserveit_owner
+5465; 0 0 ACL public COLUMN staff.staff_id reserveit_owner
+5466; 0 0 ACL public COLUMN staff.full_name reserveit_owner
+5467; 0 0 ACL public COLUMN staff.role reserveit_owner
+5468; 0 0 ACL public COLUMN staff.status reserveit_owner
+224; 1259 20410 SEQUENCE public staff_staff_id_seq reserveit_owner
+5469; 0 0 SEQUENCE OWNED BY public staff_staff_id_seq reserveit_owner
+5470; 0 0 ACL public SEQUENCE staff_staff_id_seq reserveit_owner
+5182; 2604 20388 DEFAULT public app_user user_id reserveit_owner
+5181; 2604 20377 DEFAULT public department department_id reserveit_owner
+5188; 2604 20452 DEFAULT public material material_id reserveit_owner
+5191; 2604 20524 DEFAULT public penalty penalty_id reserveit_owner
+5189; 2604 20469 DEFAULT public reservation reservation_id reserveit_owner
+5186; 2604 20433 DEFAULT public room room_id reserveit_owner
+5184; 2604 20414 DEFAULT public staff staff_id reserveit_owner
+5405; 0 20385 TABLE DATA public app_user reserveit_owner
+5403; 0 20374 TABLE DATA public department reserveit_owner
+5411; 0 20449 TABLE DATA public material reserveit_owner
+5416; 0 20521 TABLE DATA public penalty reserveit_owner
+5413; 0 20466 TABLE DATA public reservation reserveit_owner
+5414; 0 20501 TABLE DATA public reservation_material reserveit_owner
+5409; 0 20430 TABLE DATA public room reserveit_owner
+5407; 0 20411 TABLE DATA public staff reserveit_owner
+5471; 0 0 SEQUENCE SET public app_user_user_id_seq reserveit_owner
+5472; 0 0 SEQUENCE SET public department_department_id_seq reserveit_owner
+5473; 0 0 SEQUENCE SET public material_material_id_seq reserveit_owner
+5474; 0 0 SEQUENCE SET public penalty_penalty_id_seq reserveit_owner
+5475; 0 0 SEQUENCE SET public reservation_reservation_id_seq reserveit_owner
+5476; 0 0 SEQUENCE SET public room_room_id_seq reserveit_owner
+5477; 0 0 SEQUENCE SET public staff_staff_id_seq reserveit_owner
+5219; 2606 20404 CONSTRAINT public app_user app_user_email_key reserveit_owner
+5221; 2606 20402 CONSTRAINT public app_user app_user_pkey reserveit_owner
+5215; 2606 20383 CONSTRAINT public department department_department_name_key reserveit_owner
+5217; 2606 20381 CONSTRAINT public department department_pkey reserveit_owner
+5231; 2606 20464 CONSTRAINT public material material_material_name_key reserveit_owner
+5233; 2606 20462 CONSTRAINT public material material_pkey reserveit_owner
+5239; 2606 20485 CONSTRAINT public reservation no_overlapping_approved_reservations reserveit_owner
+5245; 2606 20538 CONSTRAINT public penalty penalty_pkey reserveit_owner
+5247; 2606 20540 CONSTRAINT public penalty penalty_reservation_id_key reserveit_owner
+5243; 2606 20509 CONSTRAINT public reservation_material reservation_material_pkey reserveit_owner
+5241; 2606 20483 CONSTRAINT public reservation reservation_pkey reserveit_owner
+5227; 2606 20447 CONSTRAINT public room room_building_room_name_key reserveit_owner
+5229; 2606 20445 CONSTRAINT public room room_pkey reserveit_owner
+5223; 2606 20428 CONSTRAINT public staff staff_email_key reserveit_owner
+5225; 2606 20426 CONSTRAINT public staff staff_pkey reserveit_owner
+5234; 1259 20547 INDEX public idx_reservation_date reserveit_owner
+5235; 1259 20546 INDEX public idx_reservation_room reserveit_owner
+5236; 1259 20548 INDEX public idx_reservation_status reserveit_owner
+5237; 1259 20549 INDEX public idx_reservation_user reserveit_owner
+5248; 2606 20405 FK CONSTRAINT public app_user app_user_department_id_fkey reserveit_owner
+5254; 2606 20541 FK CONSTRAINT public penalty penalty_reservation_id_fkey reserveit_owner
+5252; 2606 20515 FK CONSTRAINT public reservation_material reservation_material_material_id_fkey reserveit_owner
+5253; 2606 20510 FK CONSTRAINT public reservation_material reservation_material_reservation_id_fkey reserveit_owner
+5249; 2606 20491 FK CONSTRAINT public reservation reservation_room_id_fkey reserveit_owner
+5250; 2606 20496 FK CONSTRAINT public reservation reservation_staff_id_fkey reserveit_owner
+5251; 2606 20486 FK CONSTRAINT public reservation reservation_user_id_fkey reserveit_owner
+2376; 826 27168 DEFAULT ACL public DEFAULT PRIVILEGES FOR SEQUENCES reserveit_owner
+2375; 826 27167 DEFAULT ACL public DEFAULT PRIVILEGES FOR TABLES reserveit_owner

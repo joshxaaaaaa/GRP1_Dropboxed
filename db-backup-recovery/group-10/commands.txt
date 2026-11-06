@@ -1,0 +1,16 @@
+# Group 10: commands used. Replace nothing with real passwords; psql and pg_dump prompt for them.
+
+# Before a restore on a new server, recreate the roles first (Part 1 of access-control.sql), because roles are not in a single-database dump.
+pg_dump -U grp10_backup -h localhost -p 5432 -Fc -d grp10_unisyncdb -f grp10_unisyncdb_activity6.dump
+sha256sum grp10_unisyncdb_activity6.dump
+pg_restore --list grp10_unisyncdb_activity6.dump
+createdb -U postgres -h localhost -p 5432 grp10_restore_test
+pg_restore -U postgres -h localhost -p 5432 -d grp10_restore_test --exit-on-error grp10_unisyncdb_activity6.dump
+psql -U postgres -d grp10_restore_test -f ../../db-access-control/group-10/access-control.sql
+
+# Recovery simulation (only in grp10_restore_test)
+psql -U postgres -d grp10_restore_test -c "INSERT INTO "venue" ("account_id", "venue_name", "location") VALUES (1, 'ACT6-DISPOSABLE', 'ACT6-DISPOSABLE')"
+pg_dump -U postgres -h localhost -Fc -d grp10_restore_test -f grp10_before_incident.dump
+psql -U postgres -d grp10_restore_test -c "DELETE FROM "public"."venue" WHERE "venue_name" = 'ACT6-DISPOSABLE'"
+createdb -U postgres -h localhost grp10_recovery_test
+pg_restore -U postgres -h localhost -d grp10_recovery_test --exit-on-error grp10_before_incident.dump

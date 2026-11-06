@@ -1,0 +1,16 @@
+# Group 03: commands used. Replace nothing with real passwords; psql and pg_dump prompt for them.
+
+# Before a restore on a new server, recreate the roles first (Part 1 of access-control.sql), because roles are not in a single-database dump.
+pg_dump -U grp03_backup -h localhost -p 5432 -Fc -d group3_pawpaw -f group3_pawpaw_activity6.dump
+sha256sum group3_pawpaw_activity6.dump
+pg_restore --list group3_pawpaw_activity6.dump
+createdb -U postgres -h localhost -p 5432 grp03_restore_test
+pg_restore -U postgres -h localhost -p 5432 -d grp03_restore_test --exit-on-error group3_pawpaw_activity6.dump
+psql -U postgres -d grp03_restore_test -f ../../db-access-control/group-03/access-control.sql
+
+# Recovery simulation (only in grp03_restore_test)
+psql -U postgres -d grp03_restore_test -c "INSERT INTO "service" ("service_name", "price") VALUES ('ACT6-DISPOSABLE', 1)"
+pg_dump -U postgres -h localhost -Fc -d grp03_restore_test -f grp03_before_incident.dump
+psql -U postgres -d grp03_restore_test -c "DELETE FROM "public"."service" WHERE "service_name" = 'ACT6-DISPOSABLE'"
+createdb -U postgres -h localhost grp03_recovery_test
+pg_restore -U postgres -h localhost -d grp03_recovery_test --exit-on-error grp03_before_incident.dump

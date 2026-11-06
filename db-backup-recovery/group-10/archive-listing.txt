@@ -1,0 +1,118 @@
+;
+; Archive created at 2026-11-06 20:05:42
+;     dbname: grp10_unisyncdb
+;     TOC Entries: 108
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+5142; 0 0 ACL - SCHEMA public pg_database_owner
+220; 1259 50476 TABLE public account postgres
+5143; 0 0 ACL public TABLE account postgres
+5144; 0 0 ACL public COLUMN account.account_id postgres
+5145; 0 0 ACL public COLUMN account.account_name postgres
+5146; 0 0 ACL public COLUMN account.avatar_url postgres
+5147; 0 0 ACL public COLUMN account.account_status postgres
+219; 1259 50475 SEQUENCE public account_account_id_seq postgres
+5148; 0 0 SEQUENCE OWNED BY public account_account_id_seq postgres
+5149; 0 0 ACL public SEQUENCE account_account_id_seq postgres
+226; 1259 50539 TABLE public event postgres
+5150; 0 0 ACL public TABLE event postgres
+225; 1259 50538 SEQUENCE public event_event_id_seq postgres
+5151; 0 0 SEQUENCE OWNED BY public event_event_id_seq postgres
+5152; 0 0 ACL public SEQUENCE event_event_id_seq postgres
+230; 1259 50586 TABLE public event_schedule postgres
+5153; 0 0 ACL public TABLE event_schedule postgres
+229; 1259 50585 SEQUENCE public event_schedule_schedule_id_seq postgres
+5154; 0 0 SEQUENCE OWNED BY public event_schedule_schedule_id_seq postgres
+5155; 0 0 ACL public SEQUENCE event_schedule_schedule_id_seq postgres
+224; 1259 50509 TABLE public membership postgres
+5156; 0 0 ACL public TABLE membership postgres
+223; 1259 50508 SEQUENCE public membership_membership_id_seq postgres
+5157; 0 0 SEQUENCE OWNED BY public membership_membership_id_seq postgres
+5158; 0 0 ACL public SEQUENCE membership_membership_id_seq postgres
+234; 1259 50640 TABLE public notification postgres
+5159; 0 0 ACL public TABLE notification postgres
+233; 1259 50639 SEQUENCE public notification_notification_id_seq postgres
+5160; 0 0 SEQUENCE OWNED BY public notification_notification_id_seq postgres
+5161; 0 0 ACL public SEQUENCE notification_notification_id_seq postgres
+222; 1259 50494 TABLE public organization postgres
+5162; 0 0 ACL public TABLE organization postgres
+221; 1259 50493 SEQUENCE public organization_organization_id_seq postgres
+5163; 0 0 SEQUENCE OWNED BY public organization_organization_id_seq postgres
+5164; 0 0 ACL public SEQUENCE organization_organization_id_seq postgres
+232; 1259 50613 TABLE public registration postgres
+5165; 0 0 ACL public TABLE registration postgres
+231; 1259 50612 SEQUENCE public registration_registration_id_seq postgres
+5166; 0 0 SEQUENCE OWNED BY public registration_registration_id_seq postgres
+5167; 0 0 ACL public SEQUENCE registration_registration_id_seq postgres
+228; 1259 50559 TABLE public venue postgres
+5168; 0 0 ACL public TABLE venue postgres
+227; 1259 50558 SEQUENCE public venue_venue_id_seq postgres
+5169; 0 0 SEQUENCE OWNED BY public venue_venue_id_seq postgres
+5170; 0 0 ACL public SEQUENCE venue_venue_id_seq postgres
+4893; 2604 50479 DEFAULT public account account_id postgres
+4901; 2604 50542 DEFAULT public event event_id postgres
+4905; 2604 50589 DEFAULT public event_schedule schedule_id postgres
+4897; 2604 50512 DEFAULT public membership membership_id postgres
+4910; 2604 50643 DEFAULT public notification notification_id postgres
+4895; 2604 50497 DEFAULT public organization organization_id postgres
+4907; 2604 50616 DEFAULT public registration registration_id postgres
+4903; 2604 50562 DEFAULT public venue venue_id postgres
+5120; 0 50476 TABLE DATA public account postgres
+5126; 0 50539 TABLE DATA public event postgres
+5130; 0 50586 TABLE DATA public event_schedule postgres
+5124; 0 50509 TABLE DATA public membership postgres
+5134; 0 50640 TABLE DATA public notification postgres
+5122; 0 50494 TABLE DATA public organization postgres
+5132; 0 50613 TABLE DATA public registration postgres
+5128; 0 50559 TABLE DATA public venue postgres
+5171; 0 0 SEQUENCE SET public account_account_id_seq postgres
+5172; 0 0 SEQUENCE SET public event_event_id_seq postgres
+5173; 0 0 SEQUENCE SET public event_schedule_schedule_id_seq postgres
+5174; 0 0 SEQUENCE SET public membership_membership_id_seq postgres
+5175; 0 0 SEQUENCE SET public notification_notification_id_seq postgres
+5176; 0 0 SEQUENCE SET public organization_organization_id_seq postgres
+5177; 0 0 SEQUENCE SET public registration_registration_id_seq postgres
+5178; 0 0 SEQUENCE SET public venue_venue_id_seq postgres
+4929; 2606 50492 CONSTRAINT public account account_email_key postgres
+4931; 2606 50490 CONSTRAINT public account account_pkey postgres
+4941; 2606 50552 CONSTRAINT public event event_pkey postgres
+4949; 2606 50601 CONSTRAINT public event_schedule event_schedule_pkey postgres
+4937; 2606 50525 CONSTRAINT public membership membership_pkey postgres
+4960; 2606 50658 CONSTRAINT public notification notification_pkey postgres
+4933; 2606 50507 CONSTRAINT public organization organization_pkey postgres
+4955; 2606 50626 CONSTRAINT public registration registration_pkey postgres
+4957; 2606 50628 CONSTRAINT public registration uq_account_event postgres
+4939; 2606 50527 CONSTRAINT public membership uq_account_organization postgres
+4945; 2606 50579 CONSTRAINT public venue uq_provider_venue_name postgres
+4947; 2606 50577 CONSTRAINT public venue venue_pkey postgres
+4942; 1259 50676 INDEX public idx_event_organization postgres
+4934; 1259 50675 INDEX public idx_membership_account postgres
+4935; 1259 50674 INDEX public idx_membership_organization postgres
+4958; 1259 50682 INDEX public idx_notification_account_created postgres
+4952; 1259 50681 INDEX public idx_registration_account postgres
+4953; 1259 50680 INDEX public idx_registration_event postgres
+4950; 1259 50678 INDEX public idx_schedule_date_venue postgres
+4951; 1259 50679 INDEX public idx_schedule_status postgres
+4943; 1259 50677 INDEX public idx_venue_account postgres
+4963; 2606 50553 FK CONSTRAINT public event fk_event_organization postgres
+4961; 2606 50528 FK CONSTRAINT public membership fk_membership_account postgres
+4962; 2606 50533 FK CONSTRAINT public membership fk_membership_organization postgres
+4969; 2606 50659 FK CONSTRAINT public notification fk_notification_account postgres
+4970; 2606 50669 FK CONSTRAINT public notification fk_notification_event postgres
+4971; 2606 50664 FK CONSTRAINT public notification fk_notification_organization postgres
+4967; 2606 50629 FK CONSTRAINT public registration fk_registration_account postgres
+4968; 2606 50634 FK CONSTRAINT public registration fk_registration_event postgres
+4965; 2606 50602 FK CONSTRAINT public event_schedule fk_schedule_event postgres
+4966; 2606 50607 FK CONSTRAINT public event_schedule fk_schedule_venue postgres
+4964; 2606 50580 FK CONSTRAINT public venue fk_venue_account postgres
+2088; 826 55510 DEFAULT ACL public DEFAULT PRIVILEGES FOR SEQUENCES postgres
+2087; 826 55509 DEFAULT ACL public DEFAULT PRIVILEGES FOR TABLES postgres

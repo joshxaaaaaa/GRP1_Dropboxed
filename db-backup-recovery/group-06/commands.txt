@@ -1,0 +1,16 @@
+# Group 06: commands used. Replace nothing with real passwords; psql and pg_dump prompt for them.
+
+# Before a restore on a new server, recreate the roles first (Part 1 of access-control.sql), because roles are not in a single-database dump.
+pg_dump -U grp06_backup -h localhost -p 5432 -Fc -d car_rental_db -f car_rental_db_activity6.dump
+sha256sum car_rental_db_activity6.dump
+pg_restore --list car_rental_db_activity6.dump
+createdb -U postgres -h localhost -p 5432 grp06_restore_test
+pg_restore -U postgres -h localhost -p 5432 -d grp06_restore_test --exit-on-error car_rental_db_activity6.dump
+psql -U postgres -d grp06_restore_test -f ../../db-access-control/group-06/access-control.sql
+
+# Recovery simulation (only in grp06_restore_test)
+psql -U postgres -d grp06_restore_test -c "INSERT INTO "vehicle_category" ("category_name") VALUES ('ACT6-DISPOSABLE')"
+pg_dump -U postgres -h localhost -Fc -d grp06_restore_test -f grp06_before_incident.dump
+psql -U postgres -d grp06_restore_test -c "DELETE FROM "public"."vehicle_category" WHERE "category_name" = 'ACT6-DISPOSABLE'"
+createdb -U postgres -h localhost grp06_recovery_test
+pg_restore -U postgres -h localhost -d grp06_recovery_test --exit-on-error grp06_before_incident.dump

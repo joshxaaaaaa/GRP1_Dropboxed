@@ -1,0 +1,234 @@
+;
+; Archive created at 2026-11-06 20:05:16
+;     dbname: grp10_shioricafedb
+;     TOC Entries: 224
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+6; 2615 50684 SCHEMA - shioricafe_schema postgres
+5653; 0 0 ACL - SCHEMA shioricafe_schema postgres
+2; 3079 50685 EXTENSION - btree_gist 
+5654; 0 0 COMMENT - EXTENSION btree_gist 
+279; 1255 51920 FUNCTION shioricafe_schema refresh_order_gross_amount() postgres
+358; 1255 51917 FUNCTION shioricafe_schema set_updated_at() postgres
+414; 1255 51922 FUNCTION shioricafe_schema validate_refund_allocation() postgres
+228; 1259 51483 TABLE shioricafe_schema category postgres
+5655; 0 0 ACL shioricafe_schema TABLE category postgres
+227; 1259 51482 SEQUENCE shioricafe_schema category_category_id_seq postgres
+5656; 0 0 ACL shioricafe_schema SEQUENCE category_category_id_seq postgres
+222; 1259 51412 TABLE shioricafe_schema customer postgres
+5657; 0 0 ACL shioricafe_schema TABLE customer postgres
+5658; 0 0 ACL shioricafe_schema COLUMN customer.customer_id postgres
+5659; 0 0 ACL shioricafe_schema COLUMN customer.full_name postgres
+5660; 0 0 ACL shioricafe_schema COLUMN customer.created_at postgres
+5661; 0 0 ACL shioricafe_schema COLUMN customer.updated_at postgres
+221; 1259 51411 SEQUENCE shioricafe_schema customer_customer_id_seq postgres
+5662; 0 0 ACL shioricafe_schema SEQUENCE customer_customer_id_seq postgres
+259; 1259 52516 TABLE shioricafe_schema inquiry postgres
+5663; 0 0 ACL shioricafe_schema TABLE inquiry postgres
+5664; 0 0 ACL shioricafe_schema COLUMN inquiry.inquiry_id postgres
+5665; 0 0 ACL shioricafe_schema COLUMN inquiry.name postgres
+5666; 0 0 ACL shioricafe_schema COLUMN inquiry.subject postgres
+5667; 0 0 ACL shioricafe_schema COLUMN inquiry.message postgres
+5668; 0 0 ACL shioricafe_schema COLUMN inquiry.status postgres
+5669; 0 0 ACL shioricafe_schema COLUMN inquiry.created_at postgres
+258; 1259 52515 SEQUENCE shioricafe_schema inquiry_inquiry_id_seq postgres
+5670; 0 0 SEQUENCE OWNED BY shioricafe_schema inquiry_inquiry_id_seq postgres
+5671; 0 0 ACL shioricafe_schema SEQUENCE inquiry_inquiry_id_seq postgres
+230; 1259 51502 TABLE shioricafe_schema menu_item postgres
+5672; 0 0 ACL shioricafe_schema TABLE menu_item postgres
+229; 1259 51501 SEQUENCE shioricafe_schema menu_item_menu_item_id_seq postgres
+5673; 0 0 ACL shioricafe_schema SEQUENCE menu_item_menu_item_id_seq postgres
+234; 1259 51596 TABLE shioricafe_schema order postgres
+5674; 0 0 ACL shioricafe_schema TABLE "order" postgres
+238; 1259 51669 TABLE shioricafe_schema order_discount postgres
+5675; 0 0 ACL shioricafe_schema TABLE order_discount postgres
+240; 1259 51691 TABLE shioricafe_schema order_discount_allocation postgres
+5676; 0 0 ACL shioricafe_schema TABLE order_discount_allocation postgres
+239; 1259 51690 SEQUENCE shioricafe_schema order_discount_allocation_order_discount_allocation_id_seq postgres
+5677; 0 0 ACL shioricafe_schema SEQUENCE order_discount_allocation_order_discount_allocation_id_seq postgres
+237; 1259 51668 SEQUENCE shioricafe_schema order_discount_order_discount_id_seq postgres
+5678; 0 0 ACL shioricafe_schema SEQUENCE order_discount_order_discount_id_seq postgres
+236; 1259 51632 TABLE shioricafe_schema order_item postgres
+5679; 0 0 ACL shioricafe_schema TABLE order_item postgres
+235; 1259 51631 SEQUENCE shioricafe_schema order_item_order_item_id_seq postgres
+5680; 0 0 ACL shioricafe_schema SEQUENCE order_item_order_item_id_seq postgres
+233; 1259 51595 SEQUENCE shioricafe_schema order_order_id_seq postgres
+5681; 0 0 ACL shioricafe_schema SEQUENCE order_order_id_seq postgres
+244; 1259 51754 TABLE shioricafe_schema payment_attempt postgres
+5682; 0 0 ACL shioricafe_schema TABLE payment_attempt postgres
+243; 1259 51753 SEQUENCE shioricafe_schema payment_attempt_payment_attempt_id_seq postgres
+5683; 0 0 ACL shioricafe_schema SEQUENCE payment_attempt_payment_attempt_id_seq postgres
+248; 1259 51813 TABLE shioricafe_schema payment_refund postgres
+5684; 0 0 ACL shioricafe_schema TABLE payment_refund postgres
+250; 1259 51838 TABLE shioricafe_schema payment_refund_item_allocation postgres
+5685; 0 0 ACL shioricafe_schema TABLE payment_refund_item_allocation postgres
+249; 1259 51837 SEQUENCE shioricafe_schema payment_refund_item_allocatio_payment_refund_item_allocatio_seq postgres
+5686; 0 0 ACL shioricafe_schema SEQUENCE payment_refund_item_allocatio_payment_refund_item_allocatio_seq postgres
+247; 1259 51812 SEQUENCE shioricafe_schema payment_refund_payment_refund_id_seq postgres
+5687; 0 0 ACL shioricafe_schema SEQUENCE payment_refund_payment_refund_id_seq postgres
+252; 1259 51863 TABLE shioricafe_schema payment_reversal postgres
+5688; 0 0 ACL shioricafe_schema TABLE payment_reversal postgres
+251; 1259 51862 SEQUENCE shioricafe_schema payment_reversal_payment_reversal_id_seq postgres
+5689; 0 0 ACL shioricafe_schema SEQUENCE payment_reversal_payment_reversal_id_seq postgres
+246; 1259 51782 TABLE shioricafe_schema payment_transaction postgres
+5690; 0 0 ACL shioricafe_schema TABLE payment_transaction postgres
+245; 1259 51781 SEQUENCE shioricafe_schema payment_transaction_payment_transaction_id_seq postgres
+5691; 0 0 ACL shioricafe_schema SEQUENCE payment_transaction_payment_transaction_id_seq postgres
+254; 1259 51888 TABLE shioricafe_schema provider_event postgres
+5692; 0 0 ACL shioricafe_schema TABLE provider_event postgres
+253; 1259 51887 SEQUENCE shioricafe_schema provider_event_provider_event_id_seq postgres
+5693; 0 0 ACL shioricafe_schema SEQUENCE provider_event_provider_event_id_seq postgres
+232; 1259 51531 TABLE shioricafe_schema reservation postgres
+5694; 0 0 ACL shioricafe_schema TABLE reservation postgres
+231; 1259 51530 SEQUENCE shioricafe_schema reservation_reservation_id_seq postgres
+5695; 0 0 ACL shioricafe_schema SEQUENCE reservation_reservation_id_seq postgres
+224; 1259 51431 TABLE shioricafe_schema staff postgres
+5696; 0 0 ACL shioricafe_schema TABLE staff postgres
+5697; 0 0 ACL shioricafe_schema COLUMN staff.staff_id postgres
+5698; 0 0 ACL shioricafe_schema COLUMN staff.full_name postgres
+5699; 0 0 ACL shioricafe_schema COLUMN staff.role postgres
+5700; 0 0 ACL shioricafe_schema COLUMN staff.created_by_staff_id postgres
+5701; 0 0 ACL shioricafe_schema COLUMN staff.created_at postgres
+5702; 0 0 ACL shioricafe_schema COLUMN staff.updated_at postgres
+223; 1259 51430 SEQUENCE shioricafe_schema staff_staff_id_seq postgres
+5703; 0 0 ACL shioricafe_schema SEQUENCE staff_staff_id_seq postgres
+242; 1259 51721 TABLE shioricafe_schema store_credit_ledger postgres
+5704; 0 0 ACL shioricafe_schema TABLE store_credit_ledger postgres
+241; 1259 51720 SEQUENCE shioricafe_schema store_credit_ledger_store_credit_ledger_id_seq postgres
+5705; 0 0 ACL shioricafe_schema SEQUENCE store_credit_ledger_store_credit_ledger_id_seq postgres
+226; 1259 51457 TABLE shioricafe_schema table postgres
+5706; 0 0 ACL shioricafe_schema TABLE "table" postgres
+225; 1259 51456 SEQUENCE shioricafe_schema table_table_id_seq postgres
+5707; 0 0 ACL shioricafe_schema SEQUENCE table_table_id_seq postgres
+256; 1259 51928 VIEW shioricafe_schema v_order_item_summary postgres
+5708; 0 0 ACL shioricafe_schema TABLE v_order_item_summary postgres
+255; 1259 51924 VIEW shioricafe_schema v_order_summary postgres
+5709; 0 0 ACL shioricafe_schema TABLE v_order_summary postgres
+257; 1259 51932 VIEW shioricafe_schema v_payment_summary postgres
+5710; 0 0 ACL shioricafe_schema TABLE v_payment_summary postgres
+5296; 2604 52519 DEFAULT shioricafe_schema inquiry inquiry_id postgres
+5617; 0 51483 TABLE DATA shioricafe_schema category postgres
+5611; 0 51412 TABLE DATA shioricafe_schema customer postgres
+5645; 0 52516 TABLE DATA shioricafe_schema inquiry postgres
+5619; 0 51502 TABLE DATA shioricafe_schema menu_item postgres
+5623; 0 51596 TABLE DATA shioricafe_schema order postgres
+5627; 0 51669 TABLE DATA shioricafe_schema order_discount postgres
+5629; 0 51691 TABLE DATA shioricafe_schema order_discount_allocation postgres
+5625; 0 51632 TABLE DATA shioricafe_schema order_item postgres
+5633; 0 51754 TABLE DATA shioricafe_schema payment_attempt postgres
+5637; 0 51813 TABLE DATA shioricafe_schema payment_refund postgres
+5639; 0 51838 TABLE DATA shioricafe_schema payment_refund_item_allocation postgres
+5641; 0 51863 TABLE DATA shioricafe_schema payment_reversal postgres
+5635; 0 51782 TABLE DATA shioricafe_schema payment_transaction postgres
+5643; 0 51888 TABLE DATA shioricafe_schema provider_event postgres
+5621; 0 51531 TABLE DATA shioricafe_schema reservation postgres
+5613; 0 51431 TABLE DATA shioricafe_schema staff postgres
+5631; 0 51721 TABLE DATA shioricafe_schema store_credit_ledger postgres
+5615; 0 51457 TABLE DATA shioricafe_schema table postgres
+5711; 0 0 SEQUENCE SET shioricafe_schema category_category_id_seq postgres
+5712; 0 0 SEQUENCE SET shioricafe_schema customer_customer_id_seq postgres
+5713; 0 0 SEQUENCE SET shioricafe_schema inquiry_inquiry_id_seq postgres
+5714; 0 0 SEQUENCE SET shioricafe_schema menu_item_menu_item_id_seq postgres
+5715; 0 0 SEQUENCE SET shioricafe_schema order_discount_allocation_order_discount_allocation_id_seq postgres
+5716; 0 0 SEQUENCE SET shioricafe_schema order_discount_order_discount_id_seq postgres
+5717; 0 0 SEQUENCE SET shioricafe_schema order_item_order_item_id_seq postgres
+5718; 0 0 SEQUENCE SET shioricafe_schema order_order_id_seq postgres
+5719; 0 0 SEQUENCE SET shioricafe_schema payment_attempt_payment_attempt_id_seq postgres
+5720; 0 0 SEQUENCE SET shioricafe_schema payment_refund_item_allocatio_payment_refund_item_allocatio_seq postgres
+5721; 0 0 SEQUENCE SET shioricafe_schema payment_refund_payment_refund_id_seq postgres
+5722; 0 0 SEQUENCE SET shioricafe_schema payment_reversal_payment_reversal_id_seq postgres
+5723; 0 0 SEQUENCE SET shioricafe_schema payment_transaction_payment_transaction_id_seq postgres
+5724; 0 0 SEQUENCE SET shioricafe_schema provider_event_provider_event_id_seq postgres
+5725; 0 0 SEQUENCE SET shioricafe_schema reservation_reservation_id_seq postgres
+5726; 0 0 SEQUENCE SET shioricafe_schema staff_staff_id_seq postgres
+5727; 0 0 SEQUENCE SET shioricafe_schema store_credit_ledger_store_credit_ledger_id_seq postgres
+5728; 0 0 SEQUENCE SET shioricafe_schema table_table_id_seq postgres
+5367; 2606 51500 CONSTRAINT shioricafe_schema category category_category_name_key postgres
+5369; 2606 51498 CONSTRAINT shioricafe_schema category category_pkey postgres
+5357; 2606 51428 CONSTRAINT shioricafe_schema customer customer_pkey postgres
+5374; 2606 51594 CONSTRAINT shioricafe_schema reservation ex_reservation_no_overlap postgres
+5431; 2606 52530 CONSTRAINT shioricafe_schema inquiry inquiry_pkey postgres
+5371; 2606 51523 CONSTRAINT shioricafe_schema menu_item menu_item_pkey postgres
+5409; 2606 51775 CONSTRAINT shioricafe_schema payment_attempt payment_attempt_pkey postgres
+5419; 2606 51849 CONSTRAINT shioricafe_schema payment_refund_item_allocation payment_refund_item_allocation_pkey postgres
+5416; 2606 51831 CONSTRAINT shioricafe_schema payment_refund payment_refund_pkey postgres
+5424; 2606 51881 CONSTRAINT shioricafe_schema payment_reversal payment_reversal_pkey postgres
+5413; 2606 51801 CONSTRAINT shioricafe_schema payment_transaction payment_transaction_pkey postgres
+5385; 2606 51620 CONSTRAINT shioricafe_schema order pk_order postgres
+5392; 2606 51682 CONSTRAINT shioricafe_schema order_discount pk_order_discount postgres
+5399; 2606 51703 CONSTRAINT shioricafe_schema order_discount_allocation pk_order_discount_allocation postgres
+5389; 2606 51651 CONSTRAINT shioricafe_schema order_item pk_order_item postgres
+5427; 2606 51904 CONSTRAINT shioricafe_schema provider_event provider_event_pkey postgres
+5376; 2606 51564 CONSTRAINT shioricafe_schema reservation reservation_pkey postgres
+5360; 2606 51449 CONSTRAINT shioricafe_schema staff staff_pkey postgres
+5405; 2606 51737 CONSTRAINT shioricafe_schema store_credit_ledger store_credit_ledger_pkey postgres
+5363; 2606 51479 CONSTRAINT shioricafe_schema table table_pkey postgres
+5401; 2606 51705 CONSTRAINT shioricafe_schema order_discount_allocation uq_discount_allocation_item postgres
+5394; 2606 51684 CONSTRAINT shioricafe_schema order_discount uq_order_discount_order_pair postgres
+5429; 2606 51906 CONSTRAINT shioricafe_schema provider_event uq_provider_event_reference postgres
+5421; 2606 51851 CONSTRAINT shioricafe_schema payment_refund_item_allocation uq_refund_item postgres
+5378; 2606 51566 CONSTRAINT shioricafe_schema reservation uq_reservation_id_customer postgres
+5365; 2606 51481 CONSTRAINT shioricafe_schema table uq_table_number postgres
+5406; 1259 51909 INDEX shioricafe_schema ix_attempt_order postgres
+5407; 1259 51910 INDEX shioricafe_schema ix_attempt_status postgres
+5402; 1259 51907 INDEX shioricafe_schema ix_credit_customer postgres
+5403; 1259 51908 INDEX shioricafe_schema ix_credit_order postgres
+5395; 1259 51718 INDEX shioricafe_schema ix_discount_allocation_discount_id postgres
+5396; 1259 51719 INDEX shioricafe_schema ix_discount_allocation_item_id postgres
+5397; 1259 51717 INDEX shioricafe_schema ix_discount_allocation_order_id postgres
+5380; 1259 51665 INDEX shioricafe_schema ix_order_created_at postgres
+5390; 1259 51716 INDEX shioricafe_schema ix_order_discount_order_id postgres
+5386; 1259 51667 INDEX shioricafe_schema ix_order_item_menu_item_id postgres
+5387; 1259 51666 INDEX shioricafe_schema ix_order_item_order_id postgres
+5381; 1259 51664 INDEX shioricafe_schema ix_order_preparation_status postgres
+5382; 1259 51662 INDEX shioricafe_schema ix_order_reservation_id postgres
+5383; 1259 51663 INDEX shioricafe_schema ix_order_table_id postgres
+5425; 1259 51916 INDEX shioricafe_schema ix_provider_event_status postgres
+5417; 1259 51914 INDEX shioricafe_schema ix_refund_allocation_refund postgres
+5414; 1259 51913 INDEX shioricafe_schema ix_refund_transaction postgres
+5422; 1259 51915 INDEX shioricafe_schema ix_reversal_transaction postgres
+5410; 1259 51912 INDEX shioricafe_schema ix_transaction_attempt postgres
+5411; 1259 51911 INDEX shioricafe_schema ix_transaction_order postgres
+5358; 1259 51429 INDEX shioricafe_schema uq_customer_email_lower postgres
+5372; 1259 51529 INDEX shioricafe_schema uq_menu_item_name_lower postgres
+5379; 1259 51592 INDEX shioricafe_schema uq_reservation_one_active_per_customer postgres
+5361; 1259 51455 INDEX shioricafe_schema uq_staff_email_lower postgres
+5456; 2620 51918 TRIGGER shioricafe_schema order trg_order_updated_at postgres
+5458; 2620 51919 TRIGGER shioricafe_schema payment_attempt trg_payment_attempt_updated_at postgres
+5457; 2620 51921 TRIGGER shioricafe_schema order_item trg_refresh_order_gross_amount postgres
+5459; 2620 51923 TRIGGER shioricafe_schema payment_refund_item_allocation trg_validate_refund_allocation postgres
+5449; 2606 51776 FK CONSTRAINT shioricafe_schema payment_attempt fk_attempt_order postgres
+5446; 2606 51738 FK CONSTRAINT shioricafe_schema store_credit_ledger fk_credit_customer postgres
+5447; 2606 51748 FK CONSTRAINT shioricafe_schema store_credit_ledger fk_credit_order postgres
+5448; 2606 51743 FK CONSTRAINT shioricafe_schema store_credit_ledger fk_credit_reservation postgres
+5444; 2606 51706 FK CONSTRAINT shioricafe_schema order_discount_allocation fk_discount_allocation_discount postgres
+5445; 2606 51711 FK CONSTRAINT shioricafe_schema order_discount_allocation fk_discount_allocation_order_item postgres
+5443; 2606 51685 FK CONSTRAINT shioricafe_schema order_discount fk_order_discount_order postgres
+5441; 2606 51657 FK CONSTRAINT shioricafe_schema order_item fk_order_item_menu_item postgres
+5442; 2606 51652 FK CONSTRAINT shioricafe_schema order_item fk_order_item_order postgres
+5439; 2606 51621 FK CONSTRAINT shioricafe_schema order fk_order_reservation postgres
+5440; 2606 51626 FK CONSTRAINT shioricafe_schema order fk_order_table postgres
+5453; 2606 51857 FK CONSTRAINT shioricafe_schema payment_refund_item_allocation fk_refund_allocation_item postgres
+5454; 2606 51852 FK CONSTRAINT shioricafe_schema payment_refund_item_allocation fk_refund_allocation_refund postgres
+5452; 2606 51832 FK CONSTRAINT shioricafe_schema payment_refund fk_refund_transaction postgres
+5455; 2606 51882 FK CONSTRAINT shioricafe_schema payment_reversal fk_reversal_transaction postgres
+5450; 2606 51802 FK CONSTRAINT shioricafe_schema payment_transaction fk_transaction_attempt postgres
+5451; 2606 51807 FK CONSTRAINT shioricafe_schema payment_transaction fk_transaction_order postgres
+5433; 2606 51524 FK CONSTRAINT shioricafe_schema menu_item menu_item_category_id_fkey postgres
+5434; 2606 51577 FK CONSTRAINT shioricafe_schema reservation reservation_checked_in_by_staff_id_fkey postgres
+5435; 2606 51582 FK CONSTRAINT shioricafe_schema reservation reservation_completed_by_staff_id_fkey postgres
+5436; 2606 51567 FK CONSTRAINT shioricafe_schema reservation reservation_customer_id_fkey postgres
+5437; 2606 51587 FK CONSTRAINT shioricafe_schema reservation reservation_seat_notice_acknowledged_by_staff_id_fkey postgres
+5438; 2606 51572 FK CONSTRAINT shioricafe_schema reservation reservation_table_id_fkey postgres
+5432; 2606 51450 FK CONSTRAINT shioricafe_schema staff staff_created_by_staff_id_fkey postgres
+2443; 826 52532 DEFAULT ACL shioricafe_schema DEFAULT PRIVILEGES FOR SEQUENCES postgres
+2442; 826 52531 DEFAULT ACL shioricafe_schema DEFAULT PRIVILEGES FOR TABLES postgres

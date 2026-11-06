@@ -1,0 +1,16 @@
+# Group 02: commands used. Replace nothing with real passwords; psql and pg_dump prompt for them.
+
+# Before a restore on a new server, recreate the roles first (Part 1 of access-control.sql), because roles are not in a single-database dump.
+pg_dump -U grp02_backup -h localhost -p 5432 -Fc -d grp02_event_management_db -f grp02_event_management_db_activity6.dump
+sha256sum grp02_event_management_db_activity6.dump
+pg_restore --list grp02_event_management_db_activity6.dump
+createdb -U postgres -h localhost -p 5432 grp02_restore_test
+pg_restore -U postgres -h localhost -p 5432 -d grp02_restore_test --exit-on-error grp02_event_management_db_activity6.dump
+psql -U postgres -d grp02_restore_test -f ../../db-access-control/group-02/access-control.sql
+
+# Recovery simulation (only in grp02_restore_test)
+psql -U postgres -d grp02_restore_test -c "INSERT INTO "venue" ("venue_name", "location") VALUES ('ACT6-DISPOSABLE', 'ACT6-DISPOSABLE')"
+pg_dump -U postgres -h localhost -Fc -d grp02_restore_test -f grp02_before_incident.dump
+psql -U postgres -d grp02_restore_test -c "DELETE FROM "school_event_management_db"."venue" WHERE "venue_name" = 'ACT6-DISPOSABLE'"
+createdb -U postgres -h localhost grp02_recovery_test
+pg_restore -U postgres -h localhost -d grp02_recovery_test --exit-on-error grp02_before_incident.dump

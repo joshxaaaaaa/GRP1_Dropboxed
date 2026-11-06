@@ -1,0 +1,20 @@
+-- Group 03: run against grp03_restore_test and group3_pawpaw, then compare.
+SET search_path TO "public";
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE' ORDER BY 1;
+SELECT 'appointment' AS table_name, COUNT(*) FROM "appointment";
+SELECT 'appointment_service' AS table_name, COUNT(*) FROM "appointment_service";
+SELECT 'audit_log' AS table_name, COUNT(*) FROM "audit_log";
+SELECT 'auth_session' AS table_name, COUNT(*) FROM "auth_session";
+SELECT 'medical_record' AS table_name, COUNT(*) FROM "medical_record";
+SELECT 'notification' AS table_name, COUNT(*) FROM "notification";
+SELECT 'owner' AS table_name, COUNT(*) FROM "owner";
+SELECT 'password_reset_code' AS table_name, COUNT(*) FROM "password_reset_code";
+SELECT 'pet' AS table_name, COUNT(*) FROM "pet";
+SELECT 'prescription' AS table_name, COUNT(*) FROM "prescription";
+SELECT 'service' AS table_name, COUNT(*) FROM "service";
+SELECT 'user_account' AS table_name, COUNT(*) FROM "user_account";
+SELECT 'vaccination' AS table_name, COUNT(*) FROM "vaccination";
+SELECT 'veterinarian' AS table_name, COUNT(*) FROM "veterinarian";
+SELECT contype, COUNT(*) FROM pg_constraint WHERE connamespace = 'public'::regnamespace GROUP BY 1 ORDER BY 1;
+SELECT COUNT(*) AS indexes FROM pg_indexes WHERE schemaname = 'public';
+SELECT ap.appointment_id, ap.appointment_date, ap.status, p.name AS pet_name FROM appointment ap JOIN pet p ON p.pet_id = ap.pet_id WHERE p.owner_id = 1 ORDER BY ap.appointment_date DESC;

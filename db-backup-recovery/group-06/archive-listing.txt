@@ -1,0 +1,236 @@
+;
+; Archive created at 2026-11-06 10:58:47
+;     dbname: car_rental_db
+;     TOC Entries: 226
+;     Compression: gzip
+;     Dump Version: 1.16-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 18.6
+;     Dumped by pg_dump version: 18.6
+;
+;
+; Selected TOC Entries:
+;
+5282; 0 0 ACL - SCHEMA public pg_database_owner
+219; 1259 17652 TABLE public audit_log postgres
+5283; 0 0 ACL public TABLE audit_log postgres
+220; 1259 17663 SEQUENCE public audit_log_audit_id_seq postgres
+5284; 0 0 SEQUENCE OWNED BY public audit_log_audit_id_seq postgres
+5285; 0 0 ACL public SEQUENCE audit_log_audit_id_seq postgres
+221; 1259 17664 TABLE public cancellation postgres
+5286; 0 0 ACL public TABLE cancellation postgres
+222; 1259 17678 SEQUENCE public cancellation_cancellation_id_seq postgres
+5287; 0 0 SEQUENCE OWNED BY public cancellation_cancellation_id_seq postgres
+5288; 0 0 ACL public SEQUENCE cancellation_cancellation_id_seq postgres
+223; 1259 17679 TABLE public customer postgres
+5289; 0 0 ACL public TABLE customer postgres
+5290; 0 0 ACL public COLUMN customer.customer_id postgres
+5291; 0 0 ACL public COLUMN customer.first_name postgres
+5292; 0 0 ACL public COLUMN customer.last_name postgres
+5293; 0 0 ACL public COLUMN customer.account_status postgres
+5294; 0 0 ACL public COLUMN customer.created_at postgres
+224; 1259 17694 SEQUENCE public customer_customer_id_seq postgres
+5295; 0 0 SEQUENCE OWNED BY public customer_customer_id_seq postgres
+5296; 0 0 ACL public SEQUENCE customer_customer_id_seq postgres
+225; 1259 17695 TABLE public damage_fee postgres
+5297; 0 0 ACL public TABLE damage_fee postgres
+226; 1259 17708 SEQUENCE public damage_fee_damage_fee_id_seq postgres
+5298; 0 0 SEQUENCE OWNED BY public damage_fee_damage_fee_id_seq postgres
+5299; 0 0 ACL public SEQUENCE damage_fee_damage_fee_id_seq postgres
+227; 1259 17709 TABLE public damage_incident postgres
+5300; 0 0 ACL public TABLE damage_incident postgres
+228; 1259 17721 SEQUENCE public damage_incident_damage_id_seq postgres
+5301; 0 0 SEQUENCE OWNED BY public damage_incident_damage_id_seq postgres
+5302; 0 0 ACL public SEQUENCE damage_incident_damage_id_seq postgres
+229; 1259 17722 TABLE public driver_license postgres
+5303; 0 0 ACL public TABLE driver_license postgres
+5304; 0 0 ACL public COLUMN driver_license.license_id postgres
+5305; 0 0 ACL public COLUMN driver_license.customer_id postgres
+5306; 0 0 ACL public COLUMN driver_license.license_type postgres
+5307; 0 0 ACL public COLUMN driver_license.issue_date postgres
+5308; 0 0 ACL public COLUMN driver_license.expiration_date postgres
+5309; 0 0 ACL public COLUMN driver_license.verification_status postgres
+5310; 0 0 ACL public COLUMN driver_license.rejection_reason postgres
+5311; 0 0 ACL public COLUMN driver_license.verified_at postgres
+5312; 0 0 ACL public COLUMN driver_license.verified_by_staff_id postgres
+230; 1259 17738 SEQUENCE public driver_license_license_id_seq postgres
+5313; 0 0 SEQUENCE OWNED BY public driver_license_license_id_seq postgres
+5314; 0 0 ACL public SEQUENCE driver_license_license_id_seq postgres
+252; 1259 18079 TABLE public inspection_item postgres
+5315; 0 0 ACL public TABLE inspection_item postgres
+251; 1259 18078 SEQUENCE public inspection_item_item_id_seq postgres
+5316; 0 0 SEQUENCE OWNED BY public inspection_item_item_id_seq postgres
+5317; 0 0 ACL public SEQUENCE inspection_item_item_id_seq postgres
+231; 1259 17739 TABLE public inspection_photo postgres
+5318; 0 0 ACL public TABLE inspection_photo postgres
+232; 1259 17750 SEQUENCE public inspection_photo_photo_id_seq postgres
+5319; 0 0 SEQUENCE OWNED BY public inspection_photo_photo_id_seq postgres
+5320; 0 0 ACL public SEQUENCE inspection_photo_photo_id_seq postgres
+233; 1259 17751 TABLE public payment postgres
+5321; 0 0 ACL public TABLE payment postgres
+234; 1259 17764 SEQUENCE public payment_payment_id_seq postgres
+5322; 0 0 SEQUENCE OWNED BY public payment_payment_id_seq postgres
+5323; 0 0 ACL public SEQUENCE payment_payment_id_seq postgres
+235; 1259 17765 TABLE public rental postgres
+5324; 0 0 ACL public TABLE rental postgres
+236; 1259 17793 TABLE public rental_rate postgres
+5325; 0 0 ACL public TABLE rental_rate postgres
+237; 1259 17803 SEQUENCE public rental_rate_rate_id_seq postgres
+5326; 0 0 SEQUENCE OWNED BY public rental_rate_rate_id_seq postgres
+5327; 0 0 ACL public SEQUENCE rental_rate_rate_id_seq postgres
+238; 1259 17804 SEQUENCE public rental_rental_id_seq postgres
+5328; 0 0 SEQUENCE OWNED BY public rental_rental_id_seq postgres
+5329; 0 0 ACL public SEQUENCE rental_rental_id_seq postgres
+239; 1259 17805 TABLE public rental_terms postgres
+5330; 0 0 ACL public TABLE rental_terms postgres
+240; 1259 17817 SEQUENCE public rental_terms_terms_id_seq postgres
+5331; 0 0 SEQUENCE OWNED BY public rental_terms_terms_id_seq postgres
+5332; 0 0 ACL public SEQUENCE rental_terms_terms_id_seq postgres
+241; 1259 17818 TABLE public staff postgres
+5333; 0 0 ACL public TABLE staff postgres
+5334; 0 0 ACL public COLUMN staff.staff_id postgres
+5335; 0 0 ACL public COLUMN staff.first_name postgres
+5336; 0 0 ACL public COLUMN staff.last_name postgres
+5337; 0 0 ACL public COLUMN staff.role postgres
+5338; 0 0 ACL public COLUMN staff.account_status postgres
+5339; 0 0 ACL public COLUMN staff.created_at postgres
+242; 1259 17834 SEQUENCE public staff_staff_id_seq postgres
+5340; 0 0 SEQUENCE OWNED BY public staff_staff_id_seq postgres
+5341; 0 0 ACL public SEQUENCE staff_staff_id_seq postgres
+243; 1259 17835 TABLE public vehicle postgres
+5342; 0 0 ACL public TABLE vehicle postgres
+244; 1259 17850 TABLE public vehicle_category postgres
+5343; 0 0 ACL public TABLE vehicle_category postgres
+245; 1259 17859 SEQUENCE public vehicle_category_category_id_seq postgres
+5344; 0 0 SEQUENCE OWNED BY public vehicle_category_category_id_seq postgres
+5345; 0 0 ACL public SEQUENCE vehicle_category_category_id_seq postgres
+246; 1259 17860 TABLE public vehicle_inspection postgres
+5346; 0 0 ACL public TABLE vehicle_inspection postgres
+247; 1259 17872 SEQUENCE public vehicle_inspection_inspection_id_seq postgres
+5347; 0 0 SEQUENCE OWNED BY public vehicle_inspection_inspection_id_seq postgres
+5348; 0 0 ACL public SEQUENCE vehicle_inspection_inspection_id_seq postgres
+248; 1259 17873 TABLE public vehicle_maintenance postgres
+5349; 0 0 ACL public TABLE vehicle_maintenance postgres
+249; 1259 17885 SEQUENCE public vehicle_maintenance_maintenance_id_seq postgres
+5350; 0 0 SEQUENCE OWNED BY public vehicle_maintenance_maintenance_id_seq postgres
+5351; 0 0 ACL public SEQUENCE vehicle_maintenance_maintenance_id_seq postgres
+250; 1259 17886 SEQUENCE public vehicle_vehicle_id_seq postgres
+5352; 0 0 SEQUENCE OWNED BY public vehicle_vehicle_id_seq postgres
+5353; 0 0 ACL public SEQUENCE vehicle_vehicle_id_seq postgres
+4938; 2604 17887 DEFAULT public audit_log audit_id postgres
+4940; 2604 17888 DEFAULT public cancellation cancellation_id postgres
+4943; 2604 17889 DEFAULT public customer customer_id postgres
+4946; 2604 17890 DEFAULT public damage_fee damage_fee_id postgres
+4949; 2604 17891 DEFAULT public damage_incident damage_id postgres
+4952; 2604 17892 DEFAULT public driver_license license_id postgres
+4981; 2604 18082 DEFAULT public inspection_item item_id postgres
+4954; 2604 17893 DEFAULT public inspection_photo photo_id postgres
+4956; 2604 17894 DEFAULT public payment payment_id postgres
+4959; 2604 17895 DEFAULT public rental rental_id postgres
+4965; 2604 17896 DEFAULT public rental_rate rate_id postgres
+4967; 2604 17897 DEFAULT public rental_terms terms_id postgres
+4969; 2604 17898 DEFAULT public staff staff_id postgres
+4972; 2604 17899 DEFAULT public vehicle vehicle_id postgres
+4975; 2604 17900 DEFAULT public vehicle_category category_id postgres
+4977; 2604 17901 DEFAULT public vehicle_inspection inspection_id postgres
+4979; 2604 17902 DEFAULT public vehicle_maintenance maintenance_id postgres
+5241; 0 17652 TABLE DATA public audit_log postgres
+5243; 0 17664 TABLE DATA public cancellation postgres
+5245; 0 17679 TABLE DATA public customer postgres
+5247; 0 17695 TABLE DATA public damage_fee postgres
+5249; 0 17709 TABLE DATA public damage_incident postgres
+5251; 0 17722 TABLE DATA public driver_license postgres
+5274; 0 18079 TABLE DATA public inspection_item postgres
+5253; 0 17739 TABLE DATA public inspection_photo postgres
+5255; 0 17751 TABLE DATA public payment postgres
+5257; 0 17765 TABLE DATA public rental postgres
+5258; 0 17793 TABLE DATA public rental_rate postgres
+5261; 0 17805 TABLE DATA public rental_terms postgres
+5263; 0 17818 TABLE DATA public staff postgres
+5265; 0 17835 TABLE DATA public vehicle postgres
+5266; 0 17850 TABLE DATA public vehicle_category postgres
+5268; 0 17860 TABLE DATA public vehicle_inspection postgres
+5270; 0 17873 TABLE DATA public vehicle_maintenance postgres
+5354; 0 0 SEQUENCE SET public audit_log_audit_id_seq postgres
+5355; 0 0 SEQUENCE SET public cancellation_cancellation_id_seq postgres
+5356; 0 0 SEQUENCE SET public customer_customer_id_seq postgres
+5357; 0 0 SEQUENCE SET public damage_fee_damage_fee_id_seq postgres
+5358; 0 0 SEQUENCE SET public damage_incident_damage_id_seq postgres
+5359; 0 0 SEQUENCE SET public driver_license_license_id_seq postgres
+5360; 0 0 SEQUENCE SET public inspection_item_item_id_seq postgres
+5361; 0 0 SEQUENCE SET public inspection_photo_photo_id_seq postgres
+5362; 0 0 SEQUENCE SET public payment_payment_id_seq postgres
+5363; 0 0 SEQUENCE SET public rental_rate_rate_id_seq postgres
+5364; 0 0 SEQUENCE SET public rental_rental_id_seq postgres
+5365; 0 0 SEQUENCE SET public rental_terms_terms_id_seq postgres
+5366; 0 0 SEQUENCE SET public staff_staff_id_seq postgres
+5367; 0 0 SEQUENCE SET public vehicle_category_category_id_seq postgres
+5368; 0 0 SEQUENCE SET public vehicle_inspection_inspection_id_seq postgres
+5369; 0 0 SEQUENCE SET public vehicle_maintenance_maintenance_id_seq postgres
+5370; 0 0 SEQUENCE SET public vehicle_vehicle_id_seq postgres
+5007; 2606 17904 CONSTRAINT public audit_log audit_log_pkey postgres
+5011; 2606 17906 CONSTRAINT public cancellation cancellation_pkey postgres
+5013; 2606 17908 CONSTRAINT public cancellation cancellation_rental_id_key postgres
+5015; 2606 17910 CONSTRAINT public customer customer_email_key postgres
+5017; 2606 17912 CONSTRAINT public customer customer_pkey postgres
+5019; 2606 17914 CONSTRAINT public damage_fee damage_fee_damage_id_key postgres
+5021; 2606 17916 CONSTRAINT public damage_fee damage_fee_pkey postgres
+5024; 2606 17918 CONSTRAINT public damage_incident damage_incident_pkey postgres
+5026; 2606 17920 CONSTRAINT public driver_license driver_license_pkey postgres
+5067; 2606 18090 CONSTRAINT public inspection_item inspection_item_pkey postgres
+5069; 2606 18092 CONSTRAINT public inspection_item inspection_item_unique postgres
+5030; 2606 17922 CONSTRAINT public inspection_photo inspection_photo_pkey postgres
+5033; 2606 17926 CONSTRAINT public payment payment_payment_code_key postgres
+5035; 2606 17924 CONSTRAINT public payment payment_pkey postgres
+5041; 2606 17928 CONSTRAINT public rental rental_pkey postgres
+5043; 2606 17930 CONSTRAINT public rental_rate rental_rate_pkey postgres
+5045; 2606 17932 CONSTRAINT public rental_terms rental_terms_pkey postgres
+5047; 2606 17934 CONSTRAINT public rental_terms rental_terms_rental_id_key postgres
+5049; 2606 17936 CONSTRAINT public staff staff_email_key postgres
+5051; 2606 17938 CONSTRAINT public staff staff_pkey postgres
+5058; 2606 17940 CONSTRAINT public vehicle_category vehicle_category_category_name_key postgres
+5060; 2606 17942 CONSTRAINT public vehicle_category vehicle_category_pkey postgres
+5062; 2606 17944 CONSTRAINT public vehicle_inspection vehicle_inspection_pkey postgres
+5065; 2606 17946 CONSTRAINT public vehicle_maintenance vehicle_maintenance_pkey postgres
+5054; 2606 17948 CONSTRAINT public vehicle vehicle_pkey postgres
+5056; 2606 17950 CONSTRAINT public vehicle vehicle_plate_number_key postgres
+5008; 1259 17951 INDEX public idx_audit_datetime postgres
+5009; 1259 17952 INDEX public idx_audit_staff postgres
+5022; 1259 17953 INDEX public idx_damage_fee_status postgres
+5027; 1259 17954 INDEX public idx_license_customer postgres
+5028; 1259 17955 INDEX public idx_license_status postgres
+5063; 1259 17956 INDEX public idx_maintenance_vehicle postgres
+5031; 1259 17957 INDEX public idx_payment_status postgres
+5036; 1259 17958 INDEX public idx_rental_customer postgres
+5037; 1259 17959 INDEX public idx_rental_dates postgres
+5038; 1259 17960 INDEX public idx_rental_status postgres
+5039; 1259 17961 INDEX public idx_rental_vehicle postgres
+5052; 1259 17962 INDEX public idx_vehicle_status postgres
+5070; 2606 17963 FK CONSTRAINT public audit_log fk_audit_staff postgres
+5071; 2606 17968 FK CONSTRAINT public cancellation fk_cancellation_rental postgres
+5072; 2606 17973 FK CONSTRAINT public cancellation fk_cancelled_by_customer postgres
+5073; 2606 17978 FK CONSTRAINT public cancellation fk_cancelled_by_staff postgres
+5074; 2606 17983 FK CONSTRAINT public damage_fee fk_damage_fee_damage postgres
+5075; 2606 17988 FK CONSTRAINT public damage_incident fk_damage_inspection postgres
+5089; 2606 17993 FK CONSTRAINT public vehicle_inspection fk_inspection_customer postgres
+5090; 2606 17998 FK CONSTRAINT public vehicle_inspection fk_inspection_rental postgres
+5091; 2606 18003 FK CONSTRAINT public vehicle_inspection fk_inspection_staff postgres
+5076; 2606 18008 FK CONSTRAINT public driver_license fk_license_customer postgres
+5077; 2606 18013 FK CONSTRAINT public driver_license fk_license_verified_staff postgres
+5092; 2606 18018 FK CONSTRAINT public vehicle_maintenance fk_maintenance_vehicle postgres
+5081; 2606 18023 FK CONSTRAINT public payment fk_payment_damage_fee postgres
+5082; 2606 18028 FK CONSTRAINT public payment fk_payment_rental postgres
+5078; 2606 18033 FK CONSTRAINT public inspection_photo fk_photo_customer postgres
+5079; 2606 18038 FK CONSTRAINT public inspection_photo fk_photo_inspection postgres
+5080; 2606 18043 FK CONSTRAINT public inspection_photo fk_photo_staff postgres
+5083; 2606 18048 FK CONSTRAINT public rental fk_rental_customer postgres
+5084; 2606 18053 FK CONSTRAINT public rental fk_rental_rate postgres
+5086; 2606 18058 FK CONSTRAINT public rental_rate fk_rental_rate_category postgres
+5085; 2606 18063 FK CONSTRAINT public rental fk_rental_vehicle postgres
+5087; 2606 18068 FK CONSTRAINT public rental_terms fk_terms_rental postgres
+5088; 2606 18073 FK CONSTRAINT public vehicle fk_vehicle_category postgres
+5093; 2606 18093 FK CONSTRAINT public inspection_item inspection_item_inspection_id_fkey postgres
+2133; 826 25535 DEFAULT ACL public DEFAULT PRIVILEGES FOR SEQUENCES postgres
+2132; 826 25534 DEFAULT ACL public DEFAULT PRIVILEGES FOR TABLES postgres

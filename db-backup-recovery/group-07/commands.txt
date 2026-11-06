@@ -1,0 +1,16 @@
+# Group 07: commands used. Replace nothing with real passwords; psql and pg_dump prompt for them.
+
+# Before a restore on a new server, recreate the roles first (Part 1 of access-control.sql), because roles are not in a single-database dump.
+pg_dump -U grp07_backup -h localhost -p 5432 -Fc -d grp07_applicantdb -f grp07_applicantdb_activity6.dump
+sha256sum grp07_applicantdb_activity6.dump
+pg_restore --list grp07_applicantdb_activity6.dump
+createdb -U postgres -h localhost -p 5432 grp07_restore_test
+pg_restore -U postgres -h localhost -p 5432 -d grp07_restore_test --exit-on-error grp07_applicantdb_activity6.dump
+psql -U postgres -d grp07_restore_test -f ../../db-access-control/group-07/access-control.sql
+
+# Recovery simulation (only in grp07_restore_test)
+psql -U postgres -d grp07_restore_test -c "INSERT INTO "department" ("department_name") VALUES ('ACT6-DISPOSABLE')"
+pg_dump -U postgres -h localhost -Fc -d grp07_restore_test -f grp07_before_incident.dump
+psql -U postgres -d grp07_restore_test -c "DELETE FROM "public"."department" WHERE "department_name" = 'ACT6-DISPOSABLE'"
+createdb -U postgres -h localhost grp07_recovery_test
+pg_restore -U postgres -h localhost -d grp07_recovery_test --exit-on-error grp07_before_incident.dump
